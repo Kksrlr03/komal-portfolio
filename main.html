@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -6,141 +6,151 @@
   <title>Komal Sriram | Futuristic Portfolio</title>
 
   <link rel="icon" href="assets/profile.jpg" type="image/jpeg" />
-  <meta property="og:title" content="Komal Sriram | Futuristic Portfolio">
-  <meta property="og:description" content="AI-driven developer building automation tools and GenAI projects.">
-  <meta property="og:image" content="assets/profile.jpg">
-  <meta property="og:url" content="https://komalsriram.com/">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:title" content="Komal Sriram | Futuristic Portfolio" />
+  <meta property="og:description" content="AI-driven developer building automation tools and GenAI projects." />
+  <meta property="og:image" content="assets/profile.jpg" />
+  <meta property="og:url" content="https://komalsriram.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Logo font -->
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"/>
 
   <style>
-  :root{
-    --bg-dark:#05020a;
-    --bg-mid:#140726;
-    --violet-strong:#9a4bff;
-    --violet-deep:#4f1693;
-    --muted:#e6ddff;
-    --card: rgba(255,255,255,0.035);
-  }
+    /* ===== Reset & base ===== */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+      color:#eaf0ff;
+      background:#0b0520;
+      min-height:100vh;
+      overflow-x:hidden;
+      position:relative;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
 
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color:#fff;
-    min-height:100vh;
-    background:var(--bg-dark);
-    -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-  }
+    /* ===== Background canvas (violet particles) ===== */
+    #bgCanvas{
+      position:fixed;inset:0;width:100%;height:100%;z-index:-10;background:linear-gradient(180deg,#060218 0%, #0f0a2a 60%, #12082b 100%);
+    }
+    /* subtle overlay to darken content edges */
+    .bg-overlay{
+      position:fixed;inset:0;z-index:-5;pointer-events:none;
+      background: radial-gradient(ellipse at center, rgba(255,255,255,0.01), rgba(0,0,0,0.18) 60%);
+      mix-blend-mode:overlay;
+    }
 
-  /* animated dark violet gradient */
-  .bg-gradient{
-    position:fixed; inset:0; z-index:-6;
-    background: linear-gradient(120deg, var(--bg-dark) 0%, var(--bg-mid) 30%, #1b0b2f 60%, #12021a 100%);
-    background-size: 220% 220%;
-    animation: gradientShift 22s ease-in-out infinite;
-    filter: contrast(1.07) saturate(1.05);
-  }
-  @keyframes gradientShift{
-    0%{ background-position:0% 50% }
-    50%{ background-position:100% 50% }
-    100%{ background-position:0% 50% }
-  }
+    /* ===== Header ===== */
+    .header{
+      width:100vw;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:1.05rem 1.6rem;
+      background: linear-gradient(90deg, rgba(19,7,40,0.75), rgba(28,10,60,0.55));
+      backdrop-filter: blur(6px);
+      box-shadow:0 6px 18px rgba(12,6,30,0.5);
+      z-index:20;
+      position:sticky;
+      top:0;
+    }
+    .logo{
+      font-family:'Pacifico',cursive;
+      font-size:clamp(1.7rem,3.6vw,2.4rem);
+      color:#fff8ff;
+      text-shadow:0 6px 22px rgba(138,87,255,0.12);
+      letter-spacing:0.2px;
+    }
+    .nav{display:flex;gap:.8rem;align-items:center}
+    .nav a{color: #d9d9f7; text-decoration:none; font-weight:600; padding:.28rem .6rem; border-radius:8px; transition:all .18s}
+    .nav a:hover{color:#fff; background:rgba(255,255,255,0.03); box-shadow:0 6px 18px rgba(120,80,255,0.03)}
+    .btn{padding:.5rem 1.05rem;border-radius:28px;background:linear-gradient(90deg,#6e4df7,#8a63ff);color:#fff;font-weight:700;border:none;cursor:pointer}
+    .btn:hover{transform:translateY(-2px); box-shadow:0 18px 40px rgba(138,99,255,0.14)}
 
-  /* header */
-  .header{
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:1rem 1.6rem;
-    background: linear-gradient(180deg, rgba(79,22,147,0.18), rgba(79,22,147,0.06));
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(154,75,255,0.06);
-    z-index:40;
-    position:sticky; top:0;
-  }
-  .logo{ font-family:'Pacifico',cursive; color:#fff; font-size:clamp(1.8rem,5vw,2.3rem); text-shadow:0 14px 40px rgba(79,22,147,0.06) }
-  .nav{ display:flex; gap:.75rem; align-items:center; flex-wrap:wrap }
-  .nav a{
-    color:var(--muted); text-decoration:none; font-weight:600; font-size:1rem;
-    padding:.36rem .7rem; border-radius:8px; transition:all .15s;
-  }
-  .nav a:hover{ color:#fff; background: rgba(154,75,255,0.06); transform: translateY(-2px) }
-  .btn{
-    padding:.45rem 1rem; border-radius:18px; border:none;
-    background: linear-gradient(90deg,var(--violet-strong),var(--violet-deep));
-    color:#fff; font-weight:700;
-    box-shadow: 0 10px 30px rgba(79,22,147,0.14);
-  }
+    /* ===== Page sections ===== */
+    section{padding:4rem min(8vw,80px);max-width:1300px;margin:0 auto}
+    h2{font-size:clamp(1.4rem,3vw,1.9rem);margin-bottom:1.2rem;color:#f6f7ff;text-shadow:0 2px 10px rgba(70,50,120,0.12)}
 
-  /* layout */
-  section{ padding:4rem min(8vw,80px); max-width:1200px; margin:0 auto; }
-  h2{ font-size: clamp(1.3rem,3vw,1.8rem); margin-bottom:1rem }
+    /* ===== Hero ===== */
+    .hero{text-align:center;padding-top:6vh;padding-bottom:2.2rem}
+    .profile-img{width:170px;height:170px;border-radius:50%;object-fit:cover;border:4px solid rgba(255,255,255,0.06);box-shadow:0 12px 40px rgba(106,78,255,0.12);background:#0c0820}
+    .hero h2{font-size:clamp(1.5rem,4.2vw,2.6rem);margin-top:1rem;line-height:1.15;color:#fff}
+    .hero p.lead{max-width:880px;margin:0.8rem auto 0;font-size:1.02rem;color:#d6d7f8;line-height:1.7}
 
-  /* hero */
-  .hero{ text-align:center; padding-top:6vh; display:flex; flex-direction:column; gap:20px; align-items:center }
-  .profile-img{ width:168px; height:168px; border-radius:50%; object-fit:cover; border:4px solid rgba(255,255,255,0.03); box-shadow:0 18px 50px rgba(79,22,147,0.12); transition:transform .25s }
-  .profile-img:hover{ transform:scale(1.03) }
-  .hero h2{ font-size:clamp(1.4rem,4.5vw,2.2rem); text-shadow: 0 12px 36px rgba(79,22,147,0.06) }
+    /* ===== About & text blocks ===== */
+    .about-text,.goals{max-width:900px;margin:auto;font-size:1.02rem;line-height:1.75;color:#d7d8ff}
 
-  .about-text, .goals{ max-width:900px; margin:auto; font-size:1.03rem; line-height:1.7; color:rgba(240,235,255,0.98) }
+    /* ===== Projects ===== */
+    .projects-grid{display:grid;gap:2.2rem}
+    .project-card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:1.6rem;border-radius:14px;border:1px solid rgba(255,255,255,0.03);
+      box-shadow: 0 10px 36px rgba(3,2,10,0.45); transition:transform .22s;
+    }
+    .project-card:hover{transform:translateY(-6px)}
+    /* The split layout: video left, text right */
+    .project-card.split{display:grid;grid-template-columns:48% 52%;gap:1.25rem;align-items:start}
+    .project-card.split video{
+      width:100%; height:100%; max-height:420px; object-fit:cover; border-radius:12px;
+      box-shadow:0 18px 60px rgba(36,12,90,0.35);
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .project-card h3{font-size:clamp(1.2rem,2.6vw,1.7rem);margin-bottom:.6rem;color:#fff}
+    .project-card p{color:#dfe4ff;line-height:1.6}
 
-  /* projects */
-  .projects-grid{ display:grid; gap:1.6rem }
-  .project-card{ background:var(--card); padding:1.6rem; border-radius:12px; border:1px solid rgba(154,75,255,0.04); box-shadow:0 10px 36px rgba(12,5,25,0.12) }
-  .project-card.split{ display:grid; grid-template-columns:62% 38%; gap:1rem; align-items:start; }
-  .project-card.split video{ width:100%; height:100%; max-height:640px; object-fit:cover; border-radius:12px; box-shadow:0 14px 48px rgba(0,0,0,0.6) }
-  .project-card h3{ margin-bottom:.6rem; color:#fff; font-size:1.15rem }
+    .project-card .tech-grid{display:flex;gap:12px;margin-top:1rem}
+    .project-card .tech-grid img{width:52px;height:52px;border-radius:8px;object-fit:cover;filter:drop-shadow(0 8px 22px rgba(100,60,200,0.08))}
 
-  .tech-grid{ display:flex; gap:.9rem; margin-top:1rem; flex-wrap:wrap }
-  .tech-grid img{ width:56px; height:56px; object-fit:contain; border-radius:8px }
+    /* ===== Cert grid & docs ===== */
+    .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.6rem;text-align:center}
+    .cert-item{background:rgba(255,255,255,0.02);padding:0.85rem;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    .cert-item img{width:100%;height:160px;object-fit:cover;border-radius:10px;cursor:pointer;box-shadow:0 10px 36px rgba(10,6,40,0.45);transition:transform .22s}
+    .cert-item img:hover{transform:scale(1.03)}
+    .cert-caption{margin-top:.6rem;font-weight:700;color:#f0f0ff}
+    .cert-brief{margin-top:.45rem;font-size:.92rem;color:#d6d8ff;line-height:1.45}
 
-  /* docs / certs grid */
-  .cert-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:1.6rem; text-align:center }
-  .cert-item{ background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:12px; border-radius:12px; border:1px solid rgba(154,75,255,0.04); transition:transform .18s }
-  .cert-item img{ width:100%; height:170px; object-fit:cover; border-radius:10px; cursor:pointer }
-  .cert-caption{ margin-top:.6rem; font-weight:700; color:#f6f3ff }
-  .cert-brief{ margin-top:.35rem; color:#eaddff; font-size:.92rem }
+    /* transcript thumbnail — center it nicely */
+    .cert-item a img{display:block;margin:0 auto;width:82%;height:140px;object-fit:contain}
 
-  /* modal preview */
-  #certModal{ position:fixed; inset:0; display:none; align-items:center; justify-content:center; z-index:300; background: rgba(4,2,10,0.92) }
-  #certModal img{ max-width:88vw; max-height:82vh; border-radius:10px; box-shadow:0 28px 90px rgba(35,6,80,0.9) }
-  #closeModal{ position:absolute; top:18px; right:26px; font-size:36px; color:#fff; cursor:pointer }
+    /* ===== Modal preview ===== */
+    #certModal{position:fixed;inset:0;background:rgba(2,2,8,0.85);display:none;flex-direction:column;align-items:center;justify-content:center;z-index:120}
+    #certModal img{max-width:92vw;max-height:84vh;border-radius:10px;box-shadow:0 30px 140px rgba(20,8,80,0.7)}
+    #closeModal{position:absolute;top:24px;right:28px;font-size:36px;font-weight:bold;color:#fff;cursor:pointer}
+    #certModal .desc{max-width:86vw;margin-top:1rem;text-align:center;color:#e7e7ff;line-height:1.6}
 
-  #scrollToTop{ position:fixed; right:20px; bottom:20px; padding:12px; border-radius:50%; font-size:18px; background: linear-gradient(180deg,var(--violet-strong),var(--violet-deep)); color:#fff; box-shadow:0 10px 30px rgba(79,22,147,0.14); display:none; z-index:200 }
+    /* ===== Scroll top button ===== */
+    #scrollToTop{position:fixed;bottom:22px;right:22px;padding:12px;border:none;border-radius:50%;font-size:20px;background:linear-gradient(90deg,#7e57ff,#5c38d6);color:#fff;box-shadow:0 14px 42px rgba(120,80,255,0.14);cursor:pointer;display:none;z-index:80}
+    #scrollToTop:hover{transform:translateY(-4px)}
 
-  footer{ padding:2.6rem 1rem 6rem 1rem; text-align:center; color:#dfd6ff; position:relative }
+    /* ===== Footer ===== */
+    footer{text-align:center;padding:1.2rem 0;background:transparent;color:#dfe6ff;font-size:.92rem}
 
-  /* responsiveness */
-  @media(max-width:980px){
-    .project-card.split{ grid-template-columns: 1fr; }
-    .project-card.split video{ max-height:420px; }
-  }
-  @media(max-width:600px){
-    .profile-img{ width:140px; height:140px }
-    .cert-item img{ height:150px }
-    .header{ padding:0.8rem 1rem }
-  }
+    /* ===== Responsive ===== */
+    @media (max-width:1000px){
+      .project-card.split{grid-template-columns:1fr;gap:1rem}
+      .project-card.split video{max-height:420px}
+    }
+    @media (max-width:600px){
+      .header{padding:1rem}
+      .nav{gap:.5rem}
+      .logo{font-size:1.9rem}
+      .profile-img{width:140px;height:140px}
+      section{padding:2.6rem 6vw}
+      .cert-item img{height:150px}
+      .project-card.split video{max-height:360px}
+    }
   </style>
 </head>
 <body>
 
-  <!-- Dark violet animated gradient -->
-  <div class="bg-gradient" aria-hidden="true"></div>
+  <!-- animated particle background -->
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
+  <div class="bg-overlay" aria-hidden="true"></div>
 
-  <!-- Subtle Viola particles canvas (z-index above gradient, below content) -->
-  <canvas id="bgParticles" aria-hidden="true" style="position:fixed;inset:0;z-index:-5;pointer-events:none"></canvas>
-
-  <!-- modal for image preview -->
-  <div id="certModal" aria-hidden="true" role="dialog" aria-label="Document preview">
-    <span id="closeModal" title="Close">×</span>
-    <img id="modalImg" alt="Document preview">
-    <p id="modalDesc" style="color:#e6defa;margin-top:12px;"></p>
-  </div>
-
+  <!-- Header -->
   <header class="header" role="banner">
-    <h1 class="logo">Komal Karri</h1>
+    <div class="logo">Komal Karri</div>
     <nav class="nav" role="navigation" aria-label="Main navigation">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
@@ -153,169 +163,307 @@
     </nav>
   </header>
 
-  <main>
-    <section class="hero" id="top" aria-label="Intro">
-      <img src="assets/profile.jpg" alt="Komal profile" class="profile-img">
-      <h2>Hey, I'm Karri Komal Sriram Lakshman Reddy 👋</h2>
-    </section>
+  <!-- Hero -->
+  <section class="hero" id="about">
+    <img src="assets/profile.jpg" alt="Komal profile" class="profile-img" />
+    <h2>Hey, I'm Karri Komal Sriram Lakshman Reddy 👋</h2>
+    <p class="lead about-text">I build simple tools and AI-driven automations. I study Computer Science (MECS) and focus on AI, data and product thinking — aiming to ship useful projects and learn quickly.</p>
+  </section>
 
-    <section id="about">
-      <h2>About Me</h2>
-      <p class="about-text">
-        I'm a 20-year-old tech enthusiast with a strong interest in AI, automation, and emerging technologies. I have a B.Sc. in Computer Science and enjoy building small tools, exploring generative AI, and experimenting with ideas that can simplify real-world problems.<br><br>
-        Most of my time goes into learning new tech, testing AI models like GPT, and working on side projects related to productivity, automation, or user experience. I like things that are minimal, efficient, and useful.<br><br>
-        Whether it's coding, trying out new APIs, or improving a prototype — I'm always looking to learn and build.
-      </p>
-    </section>
+  <!-- Projects -->
+  <section id="projects" aria-labelledby="projects-heading">
+    <h2 id="projects-heading">Projects</h2>
 
-    <section id="projects" aria-labelledby="projects-heading">
-      <h2 id="projects-heading">Projects</h2>
-
-      <!-- ProdLoca: large left, text right -->
-      <div class="project-card split" aria-label="ProdLoca project">
-        <video controls src="assets/prodloca.mp4" poster="assets/prodloca_poster.jpg" aria-label="ProdLoca demo"></video>
-        <div>
-          <h3>ProdLoca – Find Local Products Nearby</h3>
-          <p>
-            ProdLoca helps people discover products in nearby neighbourhood shops instead of relying
-            only on big e-commerce websites. Shop owners can update stock from a simple dashboard,
-            while customers search, view each item on a live Mapbox map, and message the shop or
-            place an order — all inside the app.
-          </p>
-          <p><strong>Tech used:</strong> React, Firebase Realtime DB, Mapbox GL</p>
+    <!-- ProdLoca: video left, text right -->
+    <div class="project-card split" role="article" aria-label="ProdLoca">
+      <video controls src="assets/prodloca.mp4" poster="assets/prodloca_poster.jpg" aria-label="ProdLoca demo"></video>
+      <div>
+        <h3>ProdLoca – Find Local Products Nearby</h3>
+        <p>ProdLoca helps people discover products in nearby neighbourhood shops instead of relying only on large e-commerce platforms. Shop owners update stock via a simple dashboard; customers search, view items on a live map and message shops directly.</p>
+        <p>This project solved a local problem: stores often have what people need but lack a simple way to surface their inventory online. ProdLoca bridges that gap and helps local commerce.</p>
+        <p><strong>Tech used:</strong> React, Firebase Realtime DB, Mapbox GL</p>
+        <div class="tech-grid">
+          <img src="assets/mapbox.png" alt="Mapbox" title="Mapbox">
+          <img src="assets/firebase.png" alt="Firebase" title="Firebase">
+          <img src="assets/react_logo.png" alt="React" title="React">
         </div>
       </div>
+    </div>
 
-      <!-- Quote Terminals stacked below -->
-      <div class="project-card" aria-label="Quote Terminals project" style="margin-top:1.25rem">
-        <h3>Quote Terminals – AI Twitter Quote Bot</h3>
-        <p>
-          Quote Terminals is a fully automated system that shares new motivational quotes on my
-          X (Twitter) account every five minutes — without human input. ChatGPT creates the quotes,
-          a quick sentiment check keeps them positive, and a database makes sure no quote repeats.
-        </p>
-        <p><strong>Tech used:</strong> ChatGPT, Hugging Face sentiment check, SQLite/DynamoDB, IFTTT</p>
-        <div class="tech-grid" aria-hidden="true">
-          <img src="assets/twitter_logo.png" alt="Twitter">
-          <img src="assets/openai_icon.png" alt="OpenAI">
-          <img src="assets/huggingface_icon.png" alt="Hugging Face">
-          <img src="assets/ifttt_logo.png" alt="IFTTT">
-        </div>
+    <!-- Quote Terminals stacked below -->
+    <div class="project-card" role="article" aria-label="Quote Terminals" style="margin-top:1rem">
+      <h3>Quote Terminals – AI Twitter Quote Bot</h3>
+      <p>Quote Terminals is an automated pipeline that posts motivational quotes. Text is generated by an LLM, filtered by sentiment checks, and persisted to avoid repeats. It taught me practical integration of AI with automation tools.</p>
+      <p><strong>Tech used:</strong> OpenAI/ChatGPT, Hugging Face sentiment, small DB, IFTTT integrations.</p>
+      <div class="tech-grid" style="margin-top:0.8rem">
+        <img src="assets/twitter_logo.png" alt="Twitter">
+        <img src="assets/openai_icon.png" alt="OpenAI">
+        <img src="assets/huggingface_icon.png" alt="Hugging Face">
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="academic-docs" aria-labelledby="docs-heading">
-      <h2 id="docs-heading">Academic Documents</h2>
-      <div class="cert-grid">
-        <div class="cert-item"><img src="assets/tenth_cert.jpg" data-desc="10th Grade Certificate" onclick="openCert(this)" alt="10th"><div class="cert-caption">10th Grade Certificate</div><p class="cert-brief">Official 10th class certificate</p></div>
-        <div class="cert-item"><img src="assets/twelth_cert.jpg" data-desc="12th Grade Certificate" onclick="openCert(this)" alt="12th"><div class="cert-caption">12th Grade Certificate</div><p class="cert-brief">Official 12th class certificate</p></div>
-        <div class="cert-item"><img src="assets/od_cert.jpg" data-desc="Original Degree (OD)" onclick="openCert(this)" alt="OD"><div class="cert-caption">Original Degree (OD)</div><p class="cert-brief">Official degree certificate — B.V. Raju College</p></div>
-        <div class="cert-item"><img src="assets/cmm_cert.jpg" data-desc="CMM" onclick="openCert(this)" alt="CMM"><div class="cert-caption">CMM (Consolidated Marks Memo)</div><p class="cert-brief">Consolidated marks memo — B.Sc. MECS</p></div>
-        <div class="cert-item"><img src="assets/sem1_mm.jpg" data-desc="Sem1" onclick="openCert(this)" alt="sem1"><div class="cert-caption">Semester 1 Marks Memo</div><p class="cert-brief">Marks memo — Semester 1</p></div>
-        <div class="cert-item"><img src="assets/sem2_mm.jpg" data-desc="Sem2" onclick="openCert(this)" alt="sem2"><div class="cert-caption">Semester 2 Marks Memo</div><p class="cert-brief">Marks memo — Semester 2</p></div>
-        <div class="cert-item"><img src="assets/sem3_mm.jpg" data-desc="Sem3" onclick="openCert(this)" alt="sem3"><div class="cert-caption">Semester 3 Marks Memo</div><p class="cert-brief">Marks memo — Semester 3</p></div>
-        <div class="cert-item"><img src="assets/sem4_mm1.jpg" data-desc="Sem4 part1" onclick="openCert(this)" alt="sem4-1"><div class="cert-caption">Semester 4 Marks Memo (Part 1)</div><p class="cert-brief">Marks memo — Semester 4 (part 1)</p></div>
-        <div class="cert-item"><img src="assets/sem4_mm2.jpg" data-desc="Sem4 part2" onclick="openCert(this)" alt="sem4-2"><div class="cert-caption">Semester 4 Marks Memo (Part 2)</div><p class="cert-brief">Marks memo — Semester 4 (part 2)</p></div>
-        <div class="cert-item"><img src="assets/sem5_mm.jpg" data-desc="Sem5" onclick="openCert(this)" alt="sem5"><div class="cert-caption">Semester 5 Marks Memo</div><p class="cert-brief">Marks memo — Semester 5</p></div>
-        <div class="cert-item"><img src="assets/sem6_mm.jpg" data-desc="Sem6" onclick="openCert(this)" alt="sem6"><div class="cert-caption">Semester 6 Marks Memo</div><p class="cert-brief">Marks memo — Semester 6</p></div>
-        <div class="cert-item"><a href="assets/transcripts.pdf" target="_blank" rel="noopener noreferrer"><img src="assets/pdf_thumb.jpg" alt="Transcripts" style="border-radius:10px"></a><div class="cert-caption">Full Transcript (PDF)</div><p class="cert-brief">7-page official transcript — opens as PDF</p></div>
+  <!-- Academic Documents -->
+  <section id="academic-docs" aria-labelledby="academic-heading">
+    <h2 id="academic-heading">Academic Documents</h2>
+    <div class="cert-grid">
+
+      <div class="cert-item">
+        <img src="assets/tenth_cert.jpg" data-desc="10th Grade Certificate" onclick="openCert(this)" alt="10th certificate">
+        <div class="cert-caption">10th Grade Certificate</div>
+        <p class="cert-brief">Official 10th class certificate</p>
       </div>
-    </section>
 
-    <section id="course-certs"><h2>Course Certificates</h2><div class="cert-grid">
-      <div class="cert-item"><img src="assets/cert_wadhwani.jpg" data-desc="Wadhwani" onclick="openCert(this)"><div class="cert-caption">Wadhwani Employability Skills</div><p class="cert-brief">Communication, teamwork & employability basics.</p></div>
-      <div class="cert-item"><img src="assets/cert_java.jpg" data-desc="Java Python" onclick="openCert(this)"><div class="cert-caption">Java & Python Basics</div><p class="cert-brief">Introductory courses in Java and Python — fundamentals & OOP basics.</p></div>
-    </div></section>
+      <div class="cert-item">
+        <img src="assets/twelth_cert.jpg" data-desc="12th Grade Certificate" onclick="openCert(this)" alt="12th certificate">
+        <div class="cert-caption">12th Grade Certificate</div>
+        <p class="cert-brief">Official 12th class certificate</p>
+      </div>
 
-    <section id="extra-curricular"><h2>Extra-Curricular Activities</h2><div class="cert-grid">
-      <div class="cert-item"><img src="assets/cert_ieee.jpg" data-desc="IEEE" onclick="openCert(this)"><div class="cert-caption">IEEE UI/UX Hackathon</div><p class="cert-brief">Led a team in a 24-hour UI/UX challenge; won best design.</p></div>
-      <div class="cert-item"><img src="assets/cert_english.jpg" data-desc="Eclat" onclick="openCert(this)"><div class="cert-caption">English Eclat</div><p class="cert-brief">Public speaking & elocution achievement.</p></div>
-      <div class="cert-item"><img src="assets/cert_cs.jpg" data-desc="CS poster" onclick="openCert(this)"><div class="cert-caption">CS Poster: Blockchain & Crypto</div><p class="cert-brief">Poster on decentralization & smart contracts; presented to peers.</p></div>
-    </div></section>
+      <div class="cert-item">
+        <img src="assets/od_cert.jpg" data-desc="Original Degree (OD) Certificate" onclick="openCert(this)" alt="OD certificate">
+        <div class="cert-caption">Original Degree (OD)</div>
+        <p class="cert-brief">Official degree certificate — B.V. Raju College</p>
+      </div>
 
-    <section id="goals"><h2>Goals</h2>
-      <ul class="goals" style="max-width:900px;margin:auto;font-size:1.03rem;line-height:1.7;color:#efe6ff">
-        <li>⭐ Become an expert in GenAI & automation tools like GPT, LangChain, AutoGPT within 24 months.</li>
-        <li>🧪 Launch at least 2 autonomous AI micro-tools that run without human touch.</li>
-        <li>💼 Join a cutting-edge AI startup or build my own SaaS.</li>
-        <li>🤝 Contribute to impactful open-source AI tools quarterly.</li>
-        <li>🌐 Inspire 1,000+ students to code, build, and believe — no fancy degree needed.</li>
-      </ul>
-    </section>
-  </main>
+      <div class="cert-item">
+        <img src="assets/cmm_cert.jpg" data-desc="Consolidated Marks Memo (CMM)" onclick="openCert(this)" alt="CMM certificate">
+        <div class="cert-caption">CMM (Consolidated Marks Memo)</div>
+        <p class="cert-brief">Consolidated marks memo — B.Sc. MECS</p>
+      </div>
+
+      <div class="cert-item">
+        <img src="assets/sem1_mm.jpg" data-desc="Semester 1 Marks Memo" onclick="openCert(this)" alt="sem1">
+        <div class="cert-caption">Semester 1 Marks Memo</div>
+        <p class="cert-brief">Marks memo — Semester 1</p>
+      </div>
+
+      <div class="cert-item">
+        <img src="assets/sem2_mm.jpg" data-desc="Semester 2 Marks Memo" onclick="openCert(this)" alt="sem2">
+        <div class="cert-caption">Semester 2 Marks Memo</div>
+        <p class="cert-brief">Marks memo — Semester 2</p>
+      </div>
+
+      <div class="cert-item">
+        <img src="assets/sem3_mm.jpg" data-desc="Semester 3 Marks Memo" onclick="openCert(this)" alt="sem3">
+        <div class="cert-caption">Semester 3 Marks Memo</div>
+        <p class="cert-brief">Marks memo — Semester 3</p>
+      </div>
+
+      <div class="cert-item">
+        <img src="assets/sem4_mm1.jpg" data-desc="Semester 4 Marks Memo (Part 1)" onclick="openCert(this)" alt="sem4-1">
+        <div class="cert-caption">Semester 4 Marks Memo (Part 1)</div>
+        <p class="cert-brief">Marks memo — Semester 4 (part 1)</p>
+      </div>
+
+      <div class="cert-item">
+        <img src="assets/sem4_mm2.jpg" data-desc="Semester 4 Marks Memo (Part 2)" onclick="openCert(this)" alt="sem4-2">
+        <div class="cert-caption">Semester 4 Marks Memo (Part 2)</div>
+        <p class="cert-brief">Marks memo — Semester 4 (part 2)</p>
+      </div>
+
+      <div class="cert-item">
+        <img src="assets/sem5_mm.jpg" data-desc="Semester 5 Marks Memo" onclick="openCert(this)" alt="sem5">
+        <div class="cert-caption">Semester 5 Marks Memo</div>
+        <p class="cert-brief">Marks memo — Semester 5</p>
+      </div>
+
+      <div class="cert-item">
+        <img src="assets/sem6_mm.jpg" data-desc="Semester 6 Marks Memo" onclick="openCert(this)" alt="sem6">
+        <div class="cert-caption">Semester 6 Marks Memo</div>
+        <p class="cert-brief">Marks memo — Semester 6</p>
+      </div>
+
+      <!-- transcript PDF opens in new tab -->
+      <div class="cert-item">
+        <a href="assets/transcripts.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open transcripts PDF">
+          <img src="assets/pdf_thumb.jpg" alt="Transcripts PDF thumbnail">
+        </a>
+        <div class="cert-caption">Full Transcript (PDF)</div>
+        <p class="cert-brief">7-page official transcript — opens as PDF</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Course certificates -->
+  <section id="course-certs">
+    <h2>Course Certificates</h2>
+    <div class="cert-grid">
+      <div class="cert-item">
+        <img src="assets/cert_wadhwani.jpg" data-desc="Wadhwani Employability Skills" onclick="openCert(this)" alt="wadhwani">
+        <div class="cert-caption">Wadhwani Employability Skills</div>
+        <p class="cert-brief">Learned clear & confident communication, teamwork and employability basics.</p>
+      </div>
+
+      <div class="cert-item">
+        <img src="assets/cert_java.jpg" data-desc="Java & Python basics" onclick="openCert(this)" alt="java-python">
+        <div class="cert-caption">Java & Python Basics</div>
+        <p class="cert-brief">Introductory courses in Java and Python — fundamentals & OOP basics.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Extra Curricular -->
+  <section id="extra-curricular">
+    <h2>Extra-Curricular Activities</h2>
+    <div class="cert-grid">
+      <div class="cert-item">
+        <img src="assets/cert_ieee.jpg" data-desc="IEEE UI/UX Hackathon" onclick="openCert(this)" alt="ieee">
+        <div class="cert-caption">IEEE UI/UX Hackathon</div>
+        <p class="cert-brief">Led a team in a 24-hour UI/UX challenge; won best design.</p>
+      </div>
+
+      <div class="cert-item">
+        <img src="assets/cert_english.jpg" data-desc="English Eclat – Speech on Success" onclick="openCert(this)" alt="english-eclat">
+        <div class="cert-caption">English Eclat Certificate</div>
+        <p class="cert-brief">Public speaking and elocution achievements.</p>
+      </div>
+
+      <div class="cert-item">
+        <img src="assets/cert_cs.jpg" data-desc="Blockchain & Crypto poster" onclick="openCert(this)" alt="cs-poster">
+        <div class="cert-caption">CS Poster: Blockchain & Crypto</div>
+        <p class="cert-brief">Poster on decentralization & smart contracts; presented to peers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Goals -->
+  <section id="goals">
+    <h2>Goals</h2>
+    <ul class="goals">
+      <li>⭐ Become an expert in GenAI & automation tools like GPT, LangChain, AutoGPT within 24 months.</li>
+      <li>🧪 Launch at least 2 autonomous AI micro-tools that run without human touch.</li>
+      <li>💼 Join a cutting-edge AI startup or build my own SaaS.</li>
+      <li>🤝 Contribute to impactful open-source AI tools quarterly.</li>
+      <li>🌐 Inspire 1,000+ students to code, build, and believe — no fancy degree needed.</li>
+    </ul>
+  </section>
 
   <footer>© 2025 Komal Sriram | komalsriram.com</footer>
-  <button id="scrollToTop" title="Back to top" aria-label="scroll to top">↑</button>
+  <button id="scrollToTop" title="Back to top">↑</button>
+
+  <!-- Modal for preview -->
+  <div id="certModal" aria-hidden="true">
+    <span id="closeModal" title="Close">×</span>
+    <img id="modalImg" alt="Document preview">
+    <p id="modalDesc" class="desc"></p>
+  </div>
 
   <script>
-  /* particles: visible violet orbs (tweak density below) */
-  (function(){
-    const canvas = document.getElementById('bgParticles');
-    if(!canvas) return;
+    /* ===== Violet particle background (lightweight) ===== */
+    const canvas = document.getElementById('bgCanvas');
     const ctx = canvas.getContext('2d');
-    let DPR = Math.max(1, window.devicePixelRatio || 1);
-    function resize(){
-      canvas.width = innerWidth * DPR;
-      canvas.height = innerHeight * DPR;
-      canvas.style.width = innerWidth + 'px';
-      canvas.style.height = innerHeight + 'px';
-      ctx.setTransform(DPR,0,0,DPR,0,0);
-    }
-    resize();
-    window.addEventListener('resize', resize);
+    let W = canvas.width = innerWidth;
+    let H = canvas.height = innerHeight;
+    let particles = [];
+    const PARTICLE_COUNT = Math.floor(Math.min(160, Math.max(60, W/10)));
 
-    // particle count: adjust multiplier for fewer/more
-    const base = Math.min(160, Math.floor(innerWidth * innerHeight / 20000));
-    const particles = [];
-    for(let i=0;i<base;i++){
-      particles.push({
-        x: Math.random()*innerWidth,
-        y: Math.random()*innerHeight,
-        r: Math.random()*2.2 + 0.6,
-        vx: (Math.random()-0.5)*0.25,
-        vy: - (Math.random()*0.45 + 0.08),
-        a: Math.random()*0.22 + 0.07
-      });
-    }
-    function draw(){
-      ctx.clearRect(0,0,innerWidth,innerHeight);
-      for(const p of particles){
-        p.x += p.vx; p.y += p.vy;
-        if(p.y < -30) { p.y = innerHeight + 30; p.x = Math.random()*innerWidth; }
-        if(p.x < -40) p.x = innerWidth + 20;
-        if(p.x > innerWidth + 40) p.x = -20;
-        const g = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*8);
-        g.addColorStop(0, rgba(154,75,255,${p.a}));
-        g.addColorStop(0.5, rgba(90,27,147,${p.a*0.45}));
-        g.addColorStop(1, 'rgba(90,27,147,0)');
-        ctx.fillStyle = g;
-        ctx.beginPath();
-        ctx.arc(p.x,p.y,p.r*3,0,Math.PI*2);
-        ctx.fill();
+    function initParticles(){
+      particles = [];
+      for(let i=0;i<PARTICLE_COUNT;i++){
+        particles.push({
+          x: Math.random()*W,
+          y: Math.random()*H,
+          size: (Math.random()*2.6)+0.6,
+          vx: (Math.random()*0.6)-0.3,
+          vy: (Math.random()*0.5)-0.25,
+          hue: 250 + Math.random()*30,   // violet range
+          alpha: 0.06 + Math.random()*0.22,
+          drift: Math.random()*0.8
+        });
       }
-      requestAnimationFrame(draw);
     }
-    draw();
-  })();
 
-  // scroll top
-  const topBtn = document.getElementById('scrollToTop');
-  window.addEventListener('scroll', ()=>{ topBtn.style.display = window.scrollY > 300 ? 'block' : 'none'; });
-  topBtn.onclick = ()=> window.scrollTo({top:0, behavior:'smooth'});
+    function drawBg(){
+      ctx.clearRect(0,0,W,H);
+      // subtle radial gradient center
+      const g = ctx.createLinearGradient(0,0,W,H);
+      g.addColorStop(0, 'rgba(22,9,45,0.6)');
+      g.addColorStop(1, 'rgba(6,4,16,0.72)');
+      ctx.fillStyle = g;
+      ctx.fillRect(0,0,W,H);
 
-  // modal preview
-  function openCert(el){
-    const img = (el.tagName === 'IMG') ? el : el.querySelector && el.querySelector('img') ? el.querySelector('img') : null;
-    if(!img) return;
-    document.getElementById('modalImg').src = img.src;
-    document.getElementById('modalDesc').textContent = img.dataset.desc || '';
-    const m = document.getElementById('certModal');
-    m.style.display = 'flex'; m.setAttribute('aria-hidden','false');
-  }
-  document.getElementById('closeModal').onclick = ()=> { const m=document.getElementById('certModal'); m.style.display='none'; m.setAttribute('aria-hidden','true'); };
-  document.addEventListener('keydown', (e)=> { if(e.key==='Escape') document.getElementById('closeModal').click(); });
-  document.getElementById('certModal').addEventListener('click', (ev)=> { if(ev.target.id==='certModal') document.getElementById('closeModal').click(); });
+      for(let p of particles){
+        p.x += p.vx + Math.sin((Date.now()/6000) + p.drift)*0.12;
+        p.y += p.vy + Math.cos((Date.now()/7000) + p.drift)*0.08;
 
+        if(p.x < -20) p.x = W+20;
+        if(p.x > W+20) p.x = -20;
+        if(p.y < -20) p.y = H+20;
+        if(p.y > H+20) p.y = -20;
+
+        ctx.beginPath();
+        let rad = p.size;
+        // soft glow
+        ctx.fillStyle = rgba(${Math.floor(150 + (p.hue-240))},${Math.floor(120 + (p.hue-240)/2)},255,${p.alpha});
+        ctx.shadowColor = rgba(140,95,255,${p.alpha*0.9});
+        ctx.shadowBlur = Math.max(6, p.size*8);
+        ctx.arc(p.x, p.y, rad, 0, Math.PI*2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+
+      // subtle floating lines (very faint)
+      ctx.beginPath();
+      ctx.strokeStyle = 'rgba(140,95,255,0.02)';
+      for(let i=0;i<12;i++){
+        const y = H * (i/12);
+        ctx.moveTo(0,y + (Math.sin(Date.now()/3000 + i)*6));
+        ctx.lineTo(W, y + (Math.cos(Date.now()/3000 + i)*6));
+      }
+      ctx.stroke();
+      requestAnimationFrame(drawBg);
+    }
+
+    window.addEventListener('resize', ()=>{
+      W = canvas.width = innerWidth;
+      H = canvas.height = innerHeight;
+      initParticles();
+    });
+
+    initParticles();
+    requestAnimationFrame(drawBg);
+
+    /* ===== Scroll-to-top button ===== */
+    const topBtn = document.getElementById('scrollToTop');
+    window.addEventListener('scroll', ()=>{ topBtn.style.display = window.scrollY > 320 ? 'block' : 'none'; });
+    topBtn.onclick = ()=> window.scrollTo({top:0, behavior:'smooth'});
+
+    /* ===== Modal logic for image preview ===== */
+    function openCert(el){
+      // el is img element because we consistently pass the <img> (onclick="openCert(this)")
+      const imgSrc = el.src;
+      const desc = el.dataset.desc || '';
+      const modal = document.getElementById('certModal');
+      document.getElementById('modalImg').src = imgSrc;
+      document.getElementById('modalDesc').textContent = desc;
+      modal.style.display = 'flex';
+      modal.setAttribute('aria-hidden','false');
+      // lock scroll
+      document.body.style.overflow = 'hidden';
+    }
+
+    document.getElementById('closeModal').onclick = ()=> closeModal();
+    function closeModal(){
+      const modal = document.getElementById('certModal');
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModal(); });
+    document.getElementById('certModal').addEventListener('click', (ev)=>{
+      if(ev.target.id === 'certModal') closeModal();
+    });
+
+    /* small accessibility/touch improvement: allow Enter/Space to open images via keyboard */
+    document.querySelectorAll('.cert-item img').forEach(img=>{
+      img.tabIndex = 0;
+      img.addEventListener('keydown', e=>{
+        if(e.key === 'Enter' || e.key === ' ') openCert(img);
+      });
+    });
   </script>
 </body>
 </html>
+
