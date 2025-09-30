@@ -15,118 +15,124 @@
 
   <style>
   :root{
-    --deep-1:#07000b;     /* page darkest */
-    --deep-2:#12021a;     /* slightly lighter */
-    --violet-1:#8f3cff;   /* bright accent */
-    --violet-2:#5a1bb3;   /* deep accent */
-    --muted:#dcd2ff;
-    --card-bg: rgba(255,255,255,0.03);
+    --bg-dark:#05020a;
+    --bg-mid:#140726;
+    --violet-strong:#9a4bff;
+    --violet-deep:#4f1693;
+    --muted:#e6ddff;
+    --card: rgba(255,255,255,0.035);
   }
 
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color:#fff;
     min-height:100vh;
-    background:var(--deep-1);
+    background:var(--bg-dark);
     -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
   }
 
-  /* animated multi-stop gradient (darker violet) */
+  /* animated dark violet gradient */
   .bg-gradient{
     position:fixed; inset:0; z-index:-6;
-    background: linear-gradient(120deg, #09020b 0%, #12021a 20%, #19102a 45%, #2b0638 70%, #12021a 100%);
-    background-size: 300% 300%;
-    animation: moveGrad 18s linear infinite;
-    filter: contrast(1.03) saturate(1.06);
+    background: linear-gradient(120deg, var(--bg-dark) 0%, var(--bg-mid) 30%, #1b0b2f 60%, #12021a 100%);
+    background-size: 220% 220%;
+    animation: gradientShift 22s ease-in-out infinite;
+    filter: contrast(1.07) saturate(1.05);
   }
-  @keyframes moveGrad{
+  @keyframes gradientShift{
     0%{ background-position:0% 50% }
     50%{ background-position:100% 50% }
     100%{ background-position:0% 50% }
   }
 
-  /* header glass violet */
+  /* header */
   .header{
     width:100%;
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:1rem 1.6rem;
-    background: linear-gradient(180deg, rgba(90,27,179,0.25), rgba(60,22,122,0.15));
+    background: linear-gradient(180deg, rgba(79,22,147,0.18), rgba(79,22,147,0.06));
     backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(143,60,255,0.06);
-    z-index:30;
+    border-bottom: 1px solid rgba(154,75,255,0.06);
+    z-index:40;
     position:sticky; top:0;
   }
-  .logo{ font-family:'Pacifico',cursive; color:#fff; font-size:clamp(1.8rem,5vw,2.3rem); text-shadow:0 6px 30px rgba(120,40,220,0.08) }
+  .logo{ font-family:'Pacifico',cursive; color:#fff; font-size:clamp(1.8rem,5vw,2.3rem); text-shadow:0 14px 40px rgba(79,22,147,0.06) }
   .nav{ display:flex; gap:.75rem; align-items:center; flex-wrap:wrap }
   .nav a{
     color:var(--muted); text-decoration:none; font-weight:600; font-size:1rem;
     padding:.36rem .7rem; border-radius:8px; transition:all .15s;
   }
-  .nav a:hover{ color:#fff; background: rgba(143,60,255,0.06); transform: translateY(-2px) }
+  .nav a:hover{ color:#fff; background: rgba(154,75,255,0.06); transform: translateY(-2px) }
   .btn{
     padding:.45rem 1rem; border-radius:18px; border:none;
-    background: linear-gradient(90deg,var(--violet-1),var(--violet-2));
+    background: linear-gradient(90deg,var(--violet-strong),var(--violet-deep));
     color:#fff; font-weight:700;
-    box-shadow: 0 10px 30px rgba(90,27,179,0.15);
+    box-shadow: 0 10px 30px rgba(79,22,147,0.14);
   }
 
+  /* layout */
   section{ padding:4rem min(8vw,80px); max-width:1200px; margin:0 auto; }
   h2{ font-size: clamp(1.3rem,3vw,1.8rem); margin-bottom:1rem }
 
+  /* hero */
   .hero{ text-align:center; padding-top:6vh; display:flex; flex-direction:column; gap:20px; align-items:center }
-  .profile-img{ width:168px; height:168px; border-radius:50%; object-fit:cover; border:4px solid rgba(255,255,255,0.05); box-shadow:0 18px 40px rgba(90,27,179,0.12); transition:transform .25s }
+  .profile-img{ width:168px; height:168px; border-radius:50%; object-fit:cover; border:4px solid rgba(255,255,255,0.03); box-shadow:0 18px 50px rgba(79,22,147,0.12); transition:transform .25s }
   .profile-img:hover{ transform:scale(1.03) }
-  .hero h2{ font-size:clamp(1.4rem,4.5vw,2.2rem); text-shadow: 0 10px 30px rgba(90,27,179,0.06) }
+  .hero h2{ font-size:clamp(1.4rem,4.5vw,2.2rem); text-shadow: 0 12px 36px rgba(79,22,147,0.06) }
 
-  .about-text, .goals{ max-width:860px; margin:auto; font-size:1.03rem; line-height:1.7; color:rgba(240,240,255,0.98) }
+  .about-text, .goals{ max-width:900px; margin:auto; font-size:1.03rem; line-height:1.7; color:rgba(240,235,255,0.98) }
 
   /* projects */
   .projects-grid{ display:grid; gap:1.6rem }
-  .project-card{ background:var(--card-bg); padding:1.6rem; border-radius:12px; border:1px solid rgba(143,60,255,0.04); box-shadow:0 10px 36px rgba(20,6,50,0.12) }
+  .project-card{ background:var(--card); padding:1.6rem; border-radius:12px; border:1px solid rgba(154,75,255,0.04); box-shadow:0 10px 36px rgba(12,5,25,0.12) }
   .project-card.split{ display:grid; grid-template-columns:62% 38%; gap:1rem; align-items:start; }
-  .project-card.split video{ width:100%; height:100%; max-height:520px; object-fit:cover; border-radius:12px; box-shadow:0 14px 48px rgba(0,0,0,0.5) }
+  .project-card.split video{ width:100%; height:100%; max-height:640px; object-fit:cover; border-radius:12px; box-shadow:0 14px 48px rgba(0,0,0,0.6) }
   .project-card h3{ margin-bottom:.6rem; color:#fff; font-size:1.15rem }
 
   .tech-grid{ display:flex; gap:.9rem; margin-top:1rem; flex-wrap:wrap }
   .tech-grid img{ width:56px; height:56px; object-fit:contain; border-radius:8px }
 
-  /* grid for docs */
-  .cert-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap:1.6rem; text-align:center }
-  .cert-item{ background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:12px; border-radius:12px; border:1px solid rgba(143,60,255,0.04); transition:transform .18s }
+  /* docs / certs grid */
+  .cert-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:1.6rem; text-align:center }
+  .cert-item{ background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:12px; border-radius:12px; border:1px solid rgba(154,75,255,0.04); transition:transform .18s }
   .cert-item img{ width:100%; height:170px; object-fit:cover; border-radius:10px; cursor:pointer }
-  .cert-caption{ margin-top:.6rem; font-weight:700 }
-  .cert-brief{ margin-top:.35rem; color:#e9ddff; font-size:.92rem }
+  .cert-caption{ margin-top:.6rem; font-weight:700; color:#f6f3ff }
+  .cert-brief{ margin-top:.35rem; color:#eaddff; font-size:.92rem }
 
-  #certModal{ position:fixed; inset:0; display:none; align-items:center; justify-content:center; z-index:300; background: rgba(1,1,5,0.9) }
+  /* modal preview */
+  #certModal{ position:fixed; inset:0; display:none; align-items:center; justify-content:center; z-index:300; background: rgba(4,2,10,0.92) }
   #certModal img{ max-width:88vw; max-height:82vh; border-radius:10px; box-shadow:0 28px 90px rgba(35,6,80,0.9) }
   #closeModal{ position:absolute; top:18px; right:26px; font-size:36px; color:#fff; cursor:pointer }
 
-  #scrollToTop{ position:fixed; right:20px; bottom:20px; padding:12px; border-radius:50%; font-size:18px; background: linear-gradient(180deg,var(--violet-1),var(--violet-2)); color:#fff; box-shadow:0 10px 30px rgba(90,27,179,0.14); display:none; z-index:200 }
+  #scrollToTop{ position:fixed; right:20px; bottom:20px; padding:12px; border-radius:50%; font-size:18px; background: linear-gradient(180deg,var(--violet-strong),var(--violet-deep)); color:#fff; box-shadow:0 10px 30px rgba(79,22,147,0.14); display:none; z-index:200 }
 
-  footer{ padding:1rem; text-align:center; color:#dfd6ff }
+  footer{ padding:2.6rem 1rem 6rem 1rem; text-align:center; color:#dfd6ff; position:relative }
 
+  /* responsiveness */
   @media(max-width:980px){
     .project-card.split{ grid-template-columns: 1fr; }
-    .project-card.split video{ max-height:320px; }
+    .project-card.split video{ max-height:420px; }
   }
   @media(max-width:600px){
     .profile-img{ width:140px; height:140px }
     .cert-item img{ height:150px }
+    .header{ padding:0.8rem 1rem }
   }
-
   </style>
 </head>
 <body>
 
-  <!-- backgrounds -->
+  <!-- Dark violet animated gradient -->
   <div class="bg-gradient" aria-hidden="true"></div>
+
+  <!-- Subtle Viola particles canvas (z-index above gradient, below content) -->
   <canvas id="bgParticles" aria-hidden="true" style="position:fixed;inset:0;z-index:-5;pointer-events:none"></canvas>
 
-  <!-- modal -->
+  <!-- modal for image preview -->
   <div id="certModal" aria-hidden="true" role="dialog" aria-label="Document preview">
     <span id="closeModal" title="Close">×</span>
     <img id="modalImg" alt="Document preview">
@@ -165,6 +171,7 @@
     <section id="projects" aria-labelledby="projects-heading">
       <h2 id="projects-heading">Projects</h2>
 
+      <!-- ProdLoca: large left, text right -->
       <div class="project-card split" aria-label="ProdLoca project">
         <video controls src="assets/prodloca.mp4" poster="assets/prodloca_poster.jpg" aria-label="ProdLoca demo"></video>
         <div>
@@ -179,7 +186,8 @@
         </div>
       </div>
 
-      <div class="project-card" aria-label="Quote Terminals project">
+      <!-- Quote Terminals stacked below -->
+      <div class="project-card" aria-label="Quote Terminals project" style="margin-top:1.25rem">
         <h3>Quote Terminals – AI Twitter Quote Bot</h3>
         <p>
           Quote Terminals is a fully automated system that shares new motivational quotes on my
@@ -240,7 +248,7 @@
   <button id="scrollToTop" title="Back to top" aria-label="scroll to top">↑</button>
 
   <script>
-  /* particles (denser, visible violet drift) */
+  /* particles: visible violet orbs (tweak density below) */
   (function(){
     const canvas = document.getElementById('bgParticles');
     if(!canvas) return;
@@ -255,29 +263,31 @@
     }
     resize();
     window.addEventListener('resize', resize);
+
+    // particle count: adjust multiplier for fewer/more
+    const base = Math.min(160, Math.floor(innerWidth * innerHeight / 20000));
     const particles = [];
-    const NUM = Math.min(160, Math.floor(innerWidth * innerHeight / 20000));
-    for(let i=0;i<NUM;i++){
+    for(let i=0;i<base;i++){
       particles.push({
         x: Math.random()*innerWidth,
         y: Math.random()*innerHeight,
         r: Math.random()*2.2 + 0.6,
-        vx: (Math.random()-0.5)*0.3,
-        vy: - (Math.random()*0.6 + 0.05),
-        a: Math.random()*0.22 + 0.06
+        vx: (Math.random()-0.5)*0.25,
+        vy: - (Math.random()*0.45 + 0.08),
+        a: Math.random()*0.22 + 0.07
       });
     }
     function draw(){
       ctx.clearRect(0,0,innerWidth,innerHeight);
       for(const p of particles){
         p.x += p.vx; p.y += p.vy;
-        if(p.y < -20) { p.y = innerHeight + 20; p.x = Math.random()*innerWidth; }
-        if(p.x < -30) p.x = innerWidth + 20;
-        if(p.x > innerWidth + 30) p.x = -20;
+        if(p.y < -30) { p.y = innerHeight + 30; p.x = Math.random()*innerWidth; }
+        if(p.x < -40) p.x = innerWidth + 20;
+        if(p.x > innerWidth + 40) p.x = -20;
         const g = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*8);
-        g.addColorStop(0, rgba(143,60,255,${p.a}));
-        g.addColorStop(0.6, rgba(90,27,179,${p.a*0.45}));
-        g.addColorStop(1, 'rgba(90,27,179,0)');
+        g.addColorStop(0, rgba(154,75,255,${p.a}));
+        g.addColorStop(0.5, rgba(90,27,147,${p.a*0.45}));
+        g.addColorStop(1, 'rgba(90,27,147,0)');
         ctx.fillStyle = g;
         ctx.beginPath();
         ctx.arc(p.x,p.y,p.r*3,0,Math.PI*2);
@@ -288,12 +298,12 @@
     draw();
   })();
 
-  // scroll top btn
+  // scroll top
   const topBtn = document.getElementById('scrollToTop');
   window.addEventListener('scroll', ()=>{ topBtn.style.display = window.scrollY > 300 ? 'block' : 'none'; });
   topBtn.onclick = ()=> window.scrollTo({top:0, behavior:'smooth'});
 
-  // modal functions
+  // modal preview
   function openCert(el){
     const img = (el.tagName === 'IMG') ? el : el.querySelector && el.querySelector('img') ? el.querySelector('img') : null;
     if(!img) return;
@@ -309,6 +319,3 @@
   </script>
 </body>
 </html>
-
-
-
