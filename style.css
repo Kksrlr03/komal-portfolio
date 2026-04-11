@@ -640,12 +640,6 @@ footer{
 }
 /* ===== HERO FIX ===== */
 
-.hero{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-
 .hero-content{
   max-width:650px;
   margin:auto;
