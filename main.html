@@ -361,32 +361,8 @@ Quick learner. People-focused. Always ready to solve.
     <p id="modalDesc" class="desc"></p>
   </div>
 
-  <script>
-    /* ===== Violet particle background (lightweight) ===== */
-    const canvas = document.getElementById('bgCanvas');
-    const ctx = canvas.getContext('2d');
-    let W = canvas.width = innerWidth;
-    let H = canvas.height = innerHeight;
-    let particles = [];
-    const PARTICLE_COUNT = Math.floor(Math.min(160, Math.max(60, W/10)));
-
-    function initParticles(){
-      particles = [];
-      for(let i=0;i<PARTICLE_COUNT;i++){
-        particles.push({
-          x: Math.random()*W,
-          y: Math.random()*H,
-          size: (Math.random()*2.6)+0.6,
-          vx: (Math.random()*0.6)-0.3,
-          vy: (Math.random()*0.5)-0.25,
-          hue: 250 + Math.random()*30,   // violet range
-          alpha: 0.06 + Math.random()*0.22,
-          drift: Math.random()*0.8
-        });
-      }
-    }
-
     <script>
+/* ===== GRID BACKGROUND ===== */
 const canvas = document.getElementById('bgCanvas');
 const ctx = canvas.getContext('2d');
 
@@ -403,7 +379,7 @@ let offset = 0;
 function drawGrid() {
   ctx.clearRect(0, 0, W, H);
 
-  ctx.strokeStyle = "rgba(140,95,255,0.12)";
+  ctx.strokeStyle = "rgba(180,140,255,0.18)";
   ctx.lineWidth = 1;
 
   const gap = 40;
@@ -430,6 +406,49 @@ function drawGrid() {
 }
 
 drawGrid();
+
+/* ===== Scroll-to-top button ===== */
+const topBtn = document.getElementById('scrollToTop');
+window.addEventListener('scroll', ()=>{ 
+  topBtn.style.display = window.scrollY > 320 ? 'block' : 'none'; 
+});
+topBtn.onclick = ()=> window.scrollTo({top:0, behavior:'smooth'});
+
+/* ===== Modal logic ===== */
+function openCert(el){
+  const imgSrc = el.src;
+  const desc = el.dataset.desc || '';
+  const modal = document.getElementById('certModal');
+  document.getElementById('modalImg').src = imgSrc;
+  document.getElementById('modalDesc').textContent = desc;
+  modal.style.display = 'flex';
+  modal.setAttribute('aria-hidden','false');
+  document.body.style.overflow = 'hidden';
+}
+
+document.getElementById('closeModal').onclick = ()=> closeModal();
+
+function closeModal(){
+  const modal = document.getElementById('certModal');
+  modal.style.display = 'none';
+  modal.setAttribute('aria-hidden','true');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', (e)=>{ 
+  if(e.key === 'Escape') closeModal(); 
+});
+
+document.getElementById('certModal').addEventListener('click', (ev)=>{
+  if(ev.target.id === 'certModal') closeModal();
+});
+
+document.querySelectorAll('.cert-item img').forEach(img=>{
+  img.tabIndex = 0;
+  img.addEventListener('keydown', e=>{
+    if(e.key === 'Enter' || e.key === ' ') openCert(img);
+  });
+});
 </script>
 
     /* ===== Scroll-to-top button ===== */
