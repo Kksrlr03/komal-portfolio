@@ -263,3 +263,56 @@ footer{
   background:rgba(123,92,255,0.1);
   box-shadow:0 10px 30px rgba(123,92,255,0.2);
 }
+/* ===== IELTS SECTION ===== */
+#ielts{
+  text-align:center;
+}
+
+.ielts-card{
+  margin-top:2rem;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  align-items:center;
+
+  background:rgba(255,255,255,0.04);
+  padding:20px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.ielts-card img{
+  width:100%;
+  border-radius:12px;
+}
+
+.ielts-info h3{
+  font-size:1.6rem;
+  margin-bottom:10px;
+}
+
+.ielts-info p{
+  opacity:0.85;
+  line-height:1.6;
+  margin-bottom:15px;
+}
+
+.ielts-scores{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+
+.ielts-scores span{
+  background:rgba(123,92,255,0.1);
+  padding:10px;
+  border-radius:10px;
+  font-size:0.95rem;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .ielts-card{
+    grid-template-columns:1fr;
+  }
+}
