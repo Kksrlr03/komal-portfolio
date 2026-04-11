@@ -748,3 +748,12 @@ footer{
 .tagline{
   display:block;
 }
+#why-hire-me{
+  margin-top:60px;
+}
+.bg-overlay{
+  background:radial-gradient(circle,rgba(255,255,255,0.05),rgba(0,0,0,0.5));
+}
+.header{
+  padding:1rem 2rem;
+}
