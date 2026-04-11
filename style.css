@@ -605,3 +605,36 @@ footer{
   font-size:0.95rem;
   opacity:0.85;
 }
+/* ===== HERO IMPROVEMENT ===== */
+
+.hero h1{
+  font-size:1.8rem;
+  margin-bottom:10px;
+}
+
+.tagline{
+  font-size:1rem;
+  opacity:0.8;
+  margin-bottom:15px;
+}
+
+.hero-role{
+  font-size:0.95rem;
+  color:#bfaaff;
+  margin-bottom:15px;
+  font-weight:600;
+}
+
+.hero-desc{
+  max-width:700px;
+  margin:0 auto;
+  font-size:0.95rem;
+  line-height:1.6;
+  opacity:0.85;
+}
+
+.hero-highlight{
+  margin-top:15px;
+  font-weight:600;
+  color:#d6c7ff;
+}
