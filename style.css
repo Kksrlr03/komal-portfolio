@@ -726,3 +726,25 @@ footer{
   font-weight:600;
   color:#d6c7ff;
 }
+.hero{
+  display:block !important;
+  text-align:center !important;
+  padding-top:60px;
+}
+
+.hero *{
+  text-align:center;
+}
+.hero-desc{
+  max-width:600px !important;
+  margin:0 auto !important;
+}
+
+.hero-role{
+  display:block;
+  margin:10px auto;
+}
+
+.tagline{
+  display:block;
+}
