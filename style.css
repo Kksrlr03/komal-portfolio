@@ -1,1 +1,196 @@
-/* Style content injected in real-time */
+/* Style content injected in real-time *//* ===== RESET ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Segoe UI',sans-serif;
+  color:#eaf0ff;
+  background:#07051a;
+  overflow-x:hidden;
+}
+
+/* ===== BACKGROUND ===== */
+#bgCanvas{
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:-10;
+}
+
+.bg-overlay{
+  position:fixed;
+  inset:0;
+  z-index:-5;
+  background:radial-gradient(circle,rgba(255,255,255,0.02),rgba(0,0,0,0.4));
+}
+
+/* ===== HEADER ===== */
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:1rem 1.5rem;
+  background:rgba(20,10,50,0.6);
+  backdrop-filter:blur(10px);
+  position:sticky;
+  top:0;
+  z-index:20;
+}
+
+.logo{
+  font-family:'Pacifico',cursive;
+  font-size:2rem;
+}
+
+.nav{
+  display:flex;
+  gap:10px;
+}
+
+.nav a{
+  text-decoration:none;
+  color:#ccc;
+  font-weight:600;
+}
+
+.nav a:hover{
+  color:#fff;
+}
+
+.btn{
+  background:linear-gradient(90deg,#7b5cff,#9d7bff);
+  padding:6px 12px;
+  border-radius:20px;
+  color:white;
+}
+
+/* ===== SECTIONS ===== */
+section{
+  padding:4rem 8vw;
+  max-width:1200px;
+  margin:auto;
+}
+
+h2{
+  margin-bottom:1rem;
+}
+
+/* ===== HERO ===== */
+.hero{
+  text-align:center;
+}
+
+.profile-img{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+}
+
+/* ===== PROJECTS ===== */
+.project-card{
+  background:rgba(255,255,255,0.03);
+  padding:1.5rem;
+  border-radius:12px;
+  margin-top:1rem;
+}
+
+.project-card.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.project-card video{
+  width:100%;
+  border-radius:10px;
+}
+
+.tech-grid{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
+}
+
+.tech-grid img{
+  width:50px;
+}
+
+/* ===== CERTS ===== */
+.cert-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+
+.cert-item{
+  background:rgba(255,255,255,0.03);
+  padding:10px;
+  border-radius:10px;
+  text-align:center;
+}
+
+.cert-item img{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+.cert-caption{
+  font-weight:bold;
+  margin-top:5px;
+}
+
+.cert-brief{
+  font-size:0.9rem;
+  opacity:0.8;
+}
+
+/* ===== MODAL ===== */
+#certModal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.8);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+}
+
+#certModal img{
+  max-width:90%;
+  max-height:80%;
+}
+
+#closeModal{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:30px;
+  cursor:pointer;
+}
+
+/* ===== BUTTON ===== */
+#scrollToTop{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  border:none;
+  padding:10px;
+  border-radius:50%;
+  background:#7b5cff;
+  color:white;
+  display:none;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+  .project-card.split{
+    grid-template-columns:1fr;
+  }
+}
