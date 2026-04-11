@@ -226,3 +226,35 @@ h2{
     justify-content:center;
   }
 }
+/* ===== GOALS SECTION UPGRADE ===== */
+#goals{
+  text-align:center;
+}
+
+.goals{
+  list-style:none;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  margin-top:2rem;
+  padding:0;
+}
+
+.goals li{
+  background:rgba(255,255,255,0.04);
+  border-radius:14px;
+  padding:18px;
+  font-size:1rem;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  justify-content:center;
+  transition:0.25s;
+  border:1px solid rgba(255,255,255,0.06);
+}
+
+.goals li:hover{
+  transform:translateY(-5px);
+  background:rgba(123,92,255,0.1);
+  box-shadow:0 10px 30px rgba(123,92,255,0.2);
+}
