@@ -351,17 +351,17 @@ Quick learner. People-focused. Always ready to solve.
 </ul>
   </section>
 
-  <footer>© 2025 Komal Sriram | komalsriram.com</footer>
-  <button id="scrollToTop" title="Back to top">↑</button>
+ <footer>©️ 2025 Komal Sriram | komalsriram.com</footer>
+<button id="scrollToTop" title="Back to top">↑</button>
 
-  <!-- Modal for preview -->
-  <div id="certModal" aria-hidden="true">
-    <span id="closeModal" title="Close">×</span>
-    <img id="modalImg" alt="Document preview">
-    <p id="modalDesc" class="desc"></p>
-  </div>
+<!-- Modal for preview -->
+<div id="certModal" aria-hidden="true">
+  <span id="closeModal" title="Close">×</span>
+  <img id="modalImg" alt="Document preview">
+  <p id="modalDesc" class="desc"></p>
+</div>
 
-    <script>
+<script>
 /* ===== GRID BACKGROUND ===== */
 const canvas = document.getElementById('bgCanvas');
 const ctx = canvas.getContext('2d');
@@ -383,10 +383,8 @@ function drawGrid() {
   ctx.lineWidth = 1;
 
   const gap = 40;
-
   offset += 0.3;
 
-  // vertical lines
   for (let x = 0; x < W; x += gap) {
     ctx.beginPath();
     ctx.moveTo(x + (offset % gap), 0);
@@ -394,7 +392,6 @@ function drawGrid() {
     ctx.stroke();
   }
 
-  // horizontal lines
   for (let y = 0; y < H; y += gap) {
     ctx.beginPath();
     ctx.moveTo(0, y + (offset % gap));
@@ -406,9 +403,7 @@ function drawGrid() {
 }
 
 drawGrid();
-    <script>
 
-    
 /* ===== Scroll-to-top button ===== */
 const topBtn = document.getElementById('scrollToTop');
 window.addEventListener('scroll', ()=>{ 
@@ -445,55 +440,14 @@ document.getElementById('certModal').addEventListener('click', (ev)=>{
   if(ev.target.id === 'certModal') closeModal();
 });
 
+/* accessibility */
 document.querySelectorAll('.cert-item img').forEach(img=>{
   img.tabIndex = 0;
   img.addEventListener('keydown', e=>{
     if(e.key === 'Enter' || e.key === ' ') openCert(img);
   });
 });
+</script>
 
-    /* ===== Scroll-to-top button ===== */
-    const topBtn = document.getElementById('scrollToTop');
-    window.addEventListener('scroll', ()=>{ topBtn.style.display = window.scrollY > 320 ? 'block' : 'none'; });
-    topBtn.onclick = ()=> window.scrollTo({top:0, behavior:'smooth'});
-
-    /* ===== Modal logic for image preview ===== */
-    function openCert(el){
-      // el is img element because we consistently pass the <img> (onclick="openCert(this)")
-      const imgSrc = el.src;
-      const desc = el.dataset.desc || '';
-      const modal = document.getElementById('certModal');
-      document.getElementById('modalImg').src = imgSrc;
-      document.getElementById('modalDesc').textContent = desc;
-      modal.style.display = 'flex';
-      modal.setAttribute('aria-hidden','false');
-      // lock scroll
-      document.body.style.overflow = 'hidden';
-    }
-
-    document.getElementById('closeModal').onclick = ()=> closeModal();
-    function closeModal(){
-      const modal = document.getElementById('certModal');
-      modal.style.display = 'none';
-      modal.setAttribute('aria-hidden','true');
-      document.body.style.overflow = '';
-    }
-    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModal(); });
-    document.getElementById('certModal').addEventListener('click', (ev)=>{
-      if(ev.target.id === 'certModal') closeModal();
-    });
-
-    /* small accessibility/touch improvement: allow Enter/Space to open images via keyboard */
-    document.querySelectorAll('.cert-item img').forEach(img=>{
-      img.tabIndex = 0;
-      img.addEventListener('keydown', e=>{
-        if(e.key === 'Enter' || e.key === ' ') openCert(img);
-      });
-    });
 </body>
 </html>
-
-
-
-
-
