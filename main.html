@@ -407,7 +407,7 @@ Quick learner. People-focused. Always ready to solve.
         ctx.beginPath();
         let rad = p.size;
         // soft glow
-        ctx.fillStyle = rgba(${Math.floor(150 + (p.hue-240))},${Math.floor(120 + (p.hue-240)/2)},255,${p.alpha});
+        ctx.fillStyle = `rgba(${Math.floor(150 + (p.hue-240))},${Math.floor(120 + (p.hue-240)/2)},255,${p.alpha})`;
         ctx.shadowColor = rgba(140,95,255,${p.alpha*0.9});
         ctx.shadowBlur = Math.max(6, p.size*8);
         ctx.arc(p.x, p.y, rad, 0, Math.PI*2);
