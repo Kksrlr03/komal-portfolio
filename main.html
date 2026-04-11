@@ -386,55 +386,51 @@ Quick learner. People-focused. Always ready to solve.
       }
     }
 
-    function drawBg(){
-      ctx.clearRect(0,0,W,H);
-      // subtle radial gradient center
-      const g = ctx.createLinearGradient(0,0,W,H);
-      g.addColorStop(0, 'rgba(22,9,45,0.6)');
-      g.addColorStop(1, 'rgba(6,4,16,0.72)');
-      ctx.fillStyle = g;
-      ctx.fillRect(0,0,W,H);
+    <script>
+const canvas = document.getElementById('bgCanvas');
+const ctx = canvas.getContext('2d');
 
-      for(let p of particles){
-        p.x += p.vx + Math.sin((Date.now()/6000) + p.drift)*0.12;
-        p.y += p.vy + Math.cos((Date.now()/7000) + p.drift)*0.08;
+let W = canvas.width = window.innerWidth;
+let H = canvas.height = window.innerHeight;
 
-        if(p.x < -20) p.x = W+20;
-        if(p.x > W+20) p.x = -20;
-        if(p.y < -20) p.y = H+20;
-        if(p.y > H+20) p.y = -20;
+window.addEventListener('resize', () => {
+  W = canvas.width = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+});
 
-        ctx.beginPath();
-        let rad = p.size;
-        // soft glow
-        ctx.fillStyle = `rgba(${Math.floor(150 + (p.hue-240))},${Math.floor(120 + (p.hue-240)/2)},255,${p.alpha})`;
-        ctx.shadowColor = `rgba(140,95,255,${p.alpha*0.9})`;
-        ctx.shadowBlur = Math.max(6, p.size*8);
-        ctx.arc(p.x, p.y, rad, 0, Math.PI*2);
-        ctx.fill();
-        ctx.shadowBlur = 0;
-      }
+let offset = 0;
 
-      // subtle floating lines (very faint)
-      ctx.beginPath();
-      ctx.strokeStyle = 'rgba(140,95,255,0.02)';
-      for(let i=0;i<12;i++){
-        const y = H * (i/12);
-        ctx.moveTo(0,y + (Math.sin(Date.now()/3000 + i)*6));
-        ctx.lineTo(W, y + (Math.cos(Date.now()/3000 + i)*6));
-      }
-      ctx.stroke();
-      requestAnimationFrame(drawBg);
-    }
+function drawGrid() {
+  ctx.clearRect(0, 0, W, H);
 
-    window.addEventListener('resize', ()=>{
-      W = canvas.width = innerWidth;
-      H = canvas.height = innerHeight;
-      initParticles();
-    });
+  ctx.strokeStyle = "rgba(140,95,255,0.12)";
+  ctx.lineWidth = 1;
 
-    initParticles();
-    requestAnimationFrame(drawBg);
+  const gap = 40;
+
+  offset += 0.3;
+
+  // vertical lines
+  for (let x = 0; x < W; x += gap) {
+    ctx.beginPath();
+    ctx.moveTo(x + (offset % gap), 0);
+    ctx.lineTo(x + (offset % gap), H);
+    ctx.stroke();
+  }
+
+  // horizontal lines
+  for (let y = 0; y < H; y += gap) {
+    ctx.beginPath();
+    ctx.moveTo(0, y + (offset % gap));
+    ctx.lineTo(W, y + (offset % gap));
+    ctx.stroke();
+  }
+
+  requestAnimationFrame(drawGrid);
+}
+
+drawGrid();
+</script>
 
     /* ===== Scroll-to-top button ===== */
     const topBtn = document.getElementById('scrollToTop');
