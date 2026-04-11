@@ -7,447 +7,183 @@
 
   <link rel="icon" href="assets/profile.jpg" type="image/jpeg" />
   <meta property="og:title" content="Komal Sriram | Futuristic Portfolio" />
-  <meta property="og:description" content="Customer support specialist with strong communication skills and IELTS Band 7, focused on delivering excellent customer experience." />  <meta property="og:image" content="assets/profile.jpg" />
+  <meta property="og:description" content="Customer support specialist with strong communication skills and IELTS Band 7, focused on delivering excellent customer experience." />
+  <meta property="og:image" content="assets/profile.jpg" />
   <meta property="og:url" content="https://komalsriram.com/" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Logo font -->
+  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"/>
 
-  <style>
-    /* ===== Reset & base ===== */
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{
-      font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
-      color:#eaf0ff;
-      background:#0b0520;
-      min-height:100vh;
-      overflow-x:hidden;
-      position:relative;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-    }
-
-    /* ===== Background canvas (violet particles) ===== */
-    #bgCanvas{
-      position:fixed;inset:0;width:100%;height:100%;z-index:-10;background:linear-gradient(180deg,#060218 0%, #0f0a2a 60%, #12082b 100%);
-    }
-    /* subtle overlay to darken content edges */
-    .bg-overlay{
-      position:fixed;inset:0;z-index:-5;pointer-events:none;
-      background: radial-gradient(ellipse at center, rgba(255,255,255,0.01), rgba(0,0,0,0.18) 60%);
-      mix-blend-mode:overlay;
-    }
-
-    /* ===== Header ===== */
-    .header{
-      width:100vw;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:1.05rem 1.6rem;
-      background: linear-gradient(90deg, rgba(19,7,40,0.75), rgba(28,10,60,0.55));
-      backdrop-filter: blur(6px);
-      box-shadow:0 6px 18px rgba(12,6,30,0.5);
-      z-index:20;
-      position:sticky;
-      top:0;
-    }
-    .logo{
-      font-family:'Pacifico',cursive;
-      font-size:clamp(1.7rem,3.6vw,2.4rem);
-      color:#fff8ff;
-      text-shadow:0 6px 22px rgba(138,87,255,0.12);
-      letter-spacing:0.2px;
-    }
-    .nav{display:flex;gap:.8rem;align-items:center}
-    .nav a{color: #d9d9f7; text-decoration:none; font-weight:600; padding:.28rem .6rem; border-radius:8px; transition:all .18s}
-    .nav a:hover{color:#fff; background:rgba(255,255,255,0.03); box-shadow:0 6px 18px rgba(120,80,255,0.03)}
-    .btn{padding:.5rem 1.05rem;border-radius:28px;background:linear-gradient(90deg,#6e4df7,#8a63ff);color:#fff;font-weight:700;border:none;cursor:pointer}
-    .btn:hover{transform:translateY(-2px); box-shadow:0 18px 40px rgba(138,99,255,0.14)}
-
-    /* ===== Page sections ===== */
-    section{padding:4rem min(8vw,80px);max-width:1300px;margin:0 auto}
-    h2{font-size:clamp(1.4rem,3vw,1.9rem);margin-bottom:1.2rem;color:#f6f7ff;text-shadow:0 2px 10px rgba(70,50,120,0.12)}
-
-    /* ===== Hero ===== */
-    .hero{text-align:center;padding-top:6vh;padding-bottom:2.2rem}
-    .profile-img{width:170px;height:170px;border-radius:50%;object-fit:cover;border:4px solid rgba(255,255,255,0.06);box-shadow:0 12px 40px rgba(106,78,255,0.12);background:#0c0820}
-    .hero h2{font-size:clamp(1.5rem,4.2vw,2.6rem);margin-top:1rem;line-height:1.15;color:#fff}
-    .hero p.lead{max-width:880px;margin:0.8rem auto 0;font-size:1.02rem;color:#d6d7f8;line-height:1.7}
-
-    /* ===== About & text blocks ===== */
-    .about-text,.goals{max-width:900px;margin:auto;font-size:1.02rem;line-height:1.75;color:#d7d8ff}
-
-    /* ===== Projects ===== */
-    .projects-grid{display:grid;gap:2.2rem}
-    .project-card{
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      padding:1.6rem;border-radius:14px;border:1px solid rgba(255,255,255,0.03);
-      box-shadow: 0 10px 36px rgba(3,2,10,0.45); transition:transform .22s;
-    }
-    .project-card:hover{transform:translateY(-6px)}
-    /* The split layout: video left, text right */
-    .project-card.split{display:grid;grid-template-columns:48% 52%;gap:1.25rem;align-items:start}
-    .project-card.split video{
-      width:100%; height:100%; max-height:420px; object-fit:cover; border-radius:12px;
-      box-shadow:0 18px 60px rgba(36,12,90,0.35);
-      border:1px solid rgba(255,255,255,0.02);
-    }
-    .project-card h3{font-size:clamp(1.2rem,2.6vw,1.7rem);margin-bottom:.6rem;color:#fff}
-    .project-card p{color:#dfe4ff;line-height:1.6}
-
-    .project-card .tech-grid{display:flex;gap:12px;margin-top:1rem}
-    .project-card .tech-grid img{width:52px;height:52px;border-radius:8px;object-fit:cover;filter:drop-shadow(0 8px 22px rgba(100,60,200,0.08))}
-
-    /* ===== Cert grid & docs ===== */
-    .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.6rem;text-align:center}
-    .cert-item{background:rgba(255,255,255,0.02);padding:0.85rem;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
-    .cert-item img{width:100%;height:160px;object-fit:cover;border-radius:10px;cursor:pointer;box-shadow:0 10px 36px rgba(10,6,40,0.45);transition:transform .22s}
-    .cert-item img:hover{transform:scale(1.03)}
-    .cert-caption{margin-top:.6rem;font-weight:700;color:#f0f0ff}
-    .cert-brief{margin-top:.45rem;font-size:.92rem;color:#d6d8ff;line-height:1.45}
-
-    /* transcript thumbnail — center it nicely */
-    .cert-item a img{display:block;margin:0 auto;width:82%;height:140px;object-fit:contain}
-
-    /* ===== Modal preview ===== */
-    #certModal{position:fixed;inset:0;background:rgba(2,2,8,0.85);display:none;flex-direction:column;align-items:center;justify-content:center;z-index:120}
-    #certModal img{max-width:92vw;max-height:84vh;border-radius:10px;box-shadow:0 30px 140px rgba(20,8,80,0.7)}
-    #closeModal{position:absolute;top:24px;right:28px;font-size:36px;font-weight:bold;color:#fff;cursor:pointer}
-    #certModal .desc{max-width:86vw;margin-top:1rem;text-align:center;color:#e7e7ff;line-height:1.6}
-
-    /* ===== Scroll top button ===== */
-    #scrollToTop{position:fixed;bottom:22px;right:22px;padding:12px;border:none;border-radius:50%;font-size:20px;background:linear-gradient(90deg,#7e57ff,#5c38d6);color:#fff;box-shadow:0 14px 42px rgba(120,80,255,0.14);cursor:pointer;display:none;z-index:80}
-    #scrollToTop:hover{transform:translateY(-4px)}
-
-    /* ===== Footer ===== */
-    footer{text-align:center;padding:1.2rem 0;background:transparent;color:#dfe6ff;font-size:.92rem}
-
-    /* ===== Responsive ===== */
-    @media (max-width:1000px){
-      .project-card.split{grid-template-columns:1fr;gap:1rem}
-      .project-card.split video{max-height:420px}
-    }
-    @media (max-width:600px){
-      .header{padding:1rem}
-      .nav{gap:.5rem}
-      .logo{font-size:1.9rem}
-      .profile-img{width:140px;height:140px}
-      section{padding:2.6rem 6vw}
-      .cert-item img{height:150px}
-      .project-card.split video{max-height:360px}
-    }
-  </style>
+  <!-- ✅ CSS LINK -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- animated particle background -->
-  <canvas id="bgCanvas" aria-hidden="true"></canvas>
-  <div class="bg-overlay" aria-hidden="true"></div>
+<!-- Background -->
+<canvas id="bgCanvas"></canvas>
+<div class="bg-overlay"></div>
 
-  <!-- Header -->
-  <header class="header" role="banner">
-    <div class="logo">Komal Karri</div>
-    <nav class="nav" role="navigation" aria-label="Main navigation">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#academic-docs">Docs</a>
-      <a href="#course-certs">Certs</a>
-      <a href="#extra-curricular">Activities</a>
-      <a href="#goals">Goals</a>
-      <a class="btn" href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
-      <a class="btn" href="https://www.linkedin.com/in/komal-sriram-lakshman-reddy-karri/" target="_blank" rel="noopener">LinkedIn</a>
-    </nav>
-  </header>
+<!-- Header -->
+<header class="header">
+  <div class="logo">Komal Karri</div>
+  <nav class="nav">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#academic-docs">Docs</a>
+    <a href="#course-certs">Certs</a>
+    <a href="#extra-curricular">Activities</a>
+    <a href="#goals">Goals</a>
+    <a class="btn" href="assets/resume.pdf" target="_blank">Resume</a>
+    <a class="btn" href="https://www.linkedin.com/in/komal-sriram-lakshman-reddy-karri/" target="_blank">LinkedIn</a>
+  </nav>
+</header>
 
-  <!-- Hero -->
-  <section class="hero" id="about">
-    <img src="assets/profile.jpg" alt="Komal profile" class="profile-img" />
-    <h2>Hey, I'm Karri Komal Sriram Lakshman Reddy 👋</h2>
-    <p class="lead about-text">
+<!-- Hero -->
+<section class="hero" id="about">
+  <img src="assets/profile.jpg" class="profile-img" />
+  <h2>Hey, I'm Karri Komal Sriram Lakshman Reddy 👋</h2>
+  <p class="lead about-text">
 Turning conversations into solutions.<br><br>
-
 Customer Support Specialist | Strong Communicator | Problem Solver<br><br>
-
 I specialize in handling customer interactions with clarity, patience, and confidence.  
 With IELTS Band 7 and hands-on training in real-time customer engagement,  
 I deliver clear, calm, and effective solutions — even in high-pressure situations.<br><br>
-
 Quick learner. People-focused. Always ready to solve.
 </p>
-  </section>
+</section>
 
-  <!-- Projects -->
-  <section id="projects" aria-labelledby="projects-heading">
-    <h2 id="projects-heading">Projects</h2>
+<!-- Projects -->
+<section id="projects">
+<h2>Projects</h2>
 
-    <!-- ProdLoca: video left, text right -->
-    <div class="project-card split" role="article" aria-label="ProdLoca">
-      <video controls src="assets/prodloca.mp4" poster="assets/prodloca_poster.jpg" aria-label="ProdLoca demo"></video>
-      <div>
-        <h3>ProdLoca – Find Local Products Nearby</h3>
-        <p>ProdLoca helps users quickly find products in nearby local stores, improving accessibility and reducing dependency on large platforms.</p>
-        <p>This project strengthened my understanding of user needs, problem-solving, and delivering simple solutions that improve customer experience.</p>
-        <p><strong>Tech used:</strong> React, Firebase Realtime DB, Mapbox GL</p>
-        <div class="tech-grid">
-          <img src="assets/mapbox.png" alt="Mapbox" title="Mapbox">
-          <img src="assets/firebase.png" alt="Firebase" title="Firebase">
-          <img src="assets/react_icon.jpg" alt="React" title="React">
-        </div>
-      </div>
+<div class="project-card split">
+  <video controls src="assets/prodloca.mp4" poster="assets/prodloca_poster.jpg"></video>
+  <div>
+    <h3>ProdLoca – Find Local Products Nearby</h3>
+    <p>ProdLoca helps users quickly find products in nearby local stores, improving accessibility and reducing dependency on large platforms.</p>
+    <p>This project strengthened my understanding of user needs, problem-solving, and delivering simple solutions that improve customer experience.</p>
+    <p><strong>Tech used:</strong> React, Firebase Realtime DB, Mapbox GL</p>
+    <div class="tech-grid">
+      <img src="assets/mapbox.png">
+      <img src="assets/firebase.png">
+      <img src="assets/react_icon.jpg">
     </div>
-
-    <!-- Quote Terminals stacked below -->
-    <div class="project-card" role="article" aria-label="Quote Terminals" style="margin-top:1rem">
-      <h3>Quote Terminals – AI Twitter Quote Bot</h3>
-     <p>Quote Terminals is an automated system designed to deliver engaging content consistently, focusing on communication clarity and user interaction.</p>
-     <p>This project helped me understand user engagement, communication tone, and maintaining consistent interaction.</p>
-      <p><strong>Tech used:</strong> OpenAI/ChatGPT, Hugging Face sentiment, small DB, IFTTT integrations.</p>
-      <div class="tech-grid" style="margin-top:0.8rem">
-        <img src="assets/twitter_logo.png" alt="Twitter">
-        <img src="assets/openai_icon.png" alt="OpenAI">
-        <img src="assets/huggingface_icon.png" alt="Hugging Face">
-        <img src="assets/ifttt_logo.png" alt="IFTTT">
-      </div>
-    </div>
-  </section>
-
-  <!-- Academic Documents -->
-  <section id="academic-docs" aria-labelledby="academic-heading">
-    <h2 id="academic-heading">Academic Documents</h2>
-    <div class="cert-grid">
-
-      <div class="cert-item">
-        <img src="assets/tenth_cert.jpg" data-desc="10th Grade Certificate" onclick="openCert(this)" alt="10th certificate">
-        <div class="cert-caption">10th Grade Certificate</div>
-        <p class="cert-brief">Official 10th class certificate</p>
-      </div>
-
-      <div class="cert-item">
-        <img src="assets/twelth_cert.jpg" data-desc="12th Grade Certificate" onclick="openCert(this)" alt="12th certificate">
-        <div class="cert-caption">12th Grade Certificate</div>
-        <p class="cert-brief">Official 12th class certificate</p>
-      </div>
-
-      <div class="cert-item">
-        <img src="assets/od_cert.jpg" data-desc="Original Degree (OD) Certificate" onclick="openCert(this)" alt="OD certificate">
-        <div class="cert-caption">Original Degree (OD)</div>
-        <p class="cert-brief">Official degree certificate — B.V. Raju College</p>
-      </div>
-
-      <div class="cert-item">
-        <img src="assets/cmm_cert.jpg" data-desc="Consolidated Marks Memo (CMM)" onclick="openCert(this)" alt="CMM certificate">
-        <div class="cert-caption">CMM (Consolidated Marks Memo)</div>
-        <p class="cert-brief">Consolidated marks memo — B.Sc. MECS</p>
-      </div>
-
-      <div class="cert-item">
-        <img src="assets/sem1_mm.jpg" data-desc="Semester 1 Marks Memo" onclick="openCert(this)" alt="sem1">
-        <div class="cert-caption">Semester 1 Marks Memo</div>
-        <p class="cert-brief">Marks memo — Semester 1</p>
-      </div>
-
-      <div class="cert-item">
-        <img src="assets/sem2_mm.jpg" data-desc="Semester 2 Marks Memo" onclick="openCert(this)" alt="sem2">
-        <div class="cert-caption">Semester 2 Marks Memo</div>
-        <p class="cert-brief">Marks memo — Semester 2</p>
-      </div>
-
-      <div class="cert-item">
-        <img src="assets/sem3_mm.jpg" data-desc="Semester 3 Marks Memo" onclick="openCert(this)" alt="sem3">
-        <div class="cert-caption">Semester 3 Marks Memo</div>
-        <p class="cert-brief">Marks memo — Semester 3</p>
-      </div>
-
-      <div class="cert-item">
-        <img src="assets/sem4_mm1.jpg" data-desc="Semester 4 Marks Memo (Part 1)" onclick="openCert(this)" alt="sem4-1">
-        <div class="cert-caption">Semester 4 Marks Memo (Part 1)</div>
-        <p class="cert-brief">Marks memo — Semester 4 (part 1)</p>
-      </div>
-
-      <div class="cert-item">
-        <img src="assets/sem4_mm2.jpg" data-desc="Semester 4 Marks Memo (Part 2)" onclick="openCert(this)" alt="sem4-2">
-        <div class="cert-caption">Semester 4 Marks Memo (Part 2)</div>
-        <p class="cert-brief">Marks memo — Semester 4 (part 2)</p>
-      </div>
-
-      <div class="cert-item">
-        <img src="assets/sem5_mm.jpg" data-desc="Semester 5 Marks Memo" onclick="openCert(this)" alt="sem5">
-        <div class="cert-caption">Semester 5 Marks Memo</div>
-        <p class="cert-brief">Marks memo — Semester 5</p>
-      </div>
-
-      <div class="cert-item">
-        <img src="assets/sem6_mm.jpg" data-desc="Semester 6 Marks Memo" onclick="openCert(this)" alt="sem6">
-        <div class="cert-caption">Semester 6 Marks Memo</div>
-        <p class="cert-brief">Marks memo — Semester 6</p>
-      </div>
-
-      <!-- transcript PDF opens in new tab -->
-      <div class="cert-item">
-        <a href="assets/transcripts.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open transcripts PDF">
-          <img src="assets/pdf_thumb.jpg" alt="Transcripts PDF thumbnail">
-        </a>
-        <div class="cert-caption">Full Transcript (PDF)</div>
-        <p class="cert-brief">7-page official transcript — opens as PDF</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Course certificates -->
-  <section id="course-certs">
-    <h2>Course Certificates</h2>
-    <div class="cert-grid">
-      <div class="cert-item">
-        <img src="assets/cert_wadhwani.jpg" data-desc="Wadhwani Employability Skills" onclick="openCert(this)" alt="wadhwani">
-        <div class="cert-caption">Wadhwani Employability Skills</div>
-        <p class="cert-brief">Trained in customer communication, handling real-time interactions, problem-solving, and professional workplace behavior.</p>
-      </div>
-
-      <div class="cert-item">
-        <img src="assets/cert_java.jpg" data-desc="Java & Python basics" onclick="openCert(this)" alt="java-python">
-        <div class="cert-caption">Java & Python Basics</div>
-        <p class="cert-brief">Introductory courses in Java and Python — fundamentals & OOP basics.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Extra Curricular -->
-  <section id="extra-curricular">
-    <h2>Extra-Curricular Activities</h2>
-    <div class="cert-grid">
-      <div class="cert-item">
-        <img src="assets/cert_ieee.jpg" data-desc="IEEE UI/UX Hackathon" onclick="openCert(this)" alt="ieee">
-        <div class="cert-caption">IEEE UI/UX Hackathon</div>
-        <p class="cert-brief">Led a team in a 24-hour UI/UX challenge; won best design.</p>
-      </div>
-
-      <div class="cert-item">
-        <img src="assets/cert_english.jpg" data-desc="English Eclat – Speech on Success" onclick="openCert(this)" alt="english-eclat">
-        <div class="cert-caption">English Eclat Certificate</div>
-        <p class="cert-brief">Public speaking and elocution achievements.</p>
-      </div>
-
-      <div class="cert-item">
-        <img src="assets/cert_cs.jpg" data-desc="Blockchain & Crypto poster" onclick="openCert(this)" alt="cs-poster">
-        <div class="cert-caption">CS Poster: Blockchain & Crypto</div>
-        <p class="cert-brief">Poster on decentralization & smart contracts; presented to peers.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Goals -->
-  <section id="goals">
-    <h2>Goals</h2>
-    <ul class="goals">
-  <li>⭐ Build a strong career in customer support and communication-focused roles.</li>
-  <li>📞 Master voice and chat-based customer handling.</li>
-  <li>💼 Grow into a senior support specialist role.</li>
-  <li>🧠 Continuously improve communication and problem-solving skills.</li>
-  <li>🌐 Work with international customer support processes.</li>
-</ul>
-  </section>
-
- <footer>©️ 2026 Komal Sriram | komalsriram.com</footer>
-<button id="scrollToTop" title="Back to top">↑</button>
-
-<!-- Modal for preview -->
-<div id="certModal" aria-hidden="true">
-  <span id="closeModal" title="Close">×</span>
-  <img id="modalImg" alt="Document preview">
-  <p id="modalDesc" class="desc"></p>
+  </div>
 </div>
 
-<script>
-/* ===== GRID BACKGROUND ===== */
-const canvas = document.getElementById('bgCanvas');
-const ctx = canvas.getContext('2d');
+<div class="project-card">
+  <h3>Quote Terminals – AI Twitter Quote Bot</h3>
+  <p>Quote Terminals is an automated system designed to deliver engaging content consistently, focusing on communication clarity and user interaction.</p>
+  <p>This project helped me understand user engagement, communication tone, and maintaining consistent interaction.</p>
+  <p><strong>Tech used:</strong> OpenAI/ChatGPT, Hugging Face sentiment, small DB, IFTTT integrations.</p>
+  <div class="tech-grid">
+    <img src="assets/twitter_logo.png">
+    <img src="assets/openai_icon.png">
+    <img src="assets/huggingface_icon.png">
+    <img src="assets/ifttt_logo.png">
+  </div>
+</div>
 
-let W = canvas.width = window.innerWidth;
-let H = canvas.height = window.innerHeight;
+</section>
 
-window.addEventListener('resize', () => {
-  W = canvas.width = window.innerWidth;
-  H = canvas.height = window.innerHeight;
-});
+<!-- Academic Docs -->
+<section id="academic-docs">
+<h2>Academic Documents</h2>
+<div class="cert-grid">
 
-let offset = 0;
+<!-- KEEPING EVERYTHING SAME -->
+<div class="cert-item"><img src="assets/tenth_cert.jpg" data-desc="10th Grade Certificate" onclick="openCert(this)"><div class="cert-caption">10th Grade Certificate</div><p class="cert-brief">Official 10th class certificate</p></div>
 
-function drawGrid() {
-  ctx.clearRect(0, 0, W, H);
+<div class="cert-item"><img src="assets/twelth_cert.jpg" data-desc="12th Grade Certificate" onclick="openCert(this)"><div class="cert-caption">12th Grade Certificate</div><p class="cert-brief">Official 12th class certificate</p></div>
 
-  ctx.strokeStyle = "rgba(180,140,255,0.18)";
-  ctx.lineWidth = 1;
+<div class="cert-item"><img src="assets/od_cert.jpg" data-desc="Original Degree (OD) Certificate" onclick="openCert(this)"><div class="cert-caption">Original Degree (OD)</div><p class="cert-brief">Official degree certificate — B.V. Raju College</p></div>
 
-  const gap = 40;
-  offset += 0.3;
+<div class="cert-item"><img src="assets/cmm_cert.jpg" data-desc="CMM" onclick="openCert(this)"><div class="cert-caption">CMM</div><p class="cert-brief">Consolidated marks memo — B.Sc. MECS</p></div>
 
-  for (let x = 0; x < W; x += gap) {
-    ctx.beginPath();
-    ctx.moveTo(x + (offset % gap), 0);
-    ctx.lineTo(x + (offset % gap), H);
-    ctx.stroke();
-  }
+<div class="cert-item"><img src="assets/sem1_mm.jpg" onclick="openCert(this)"><div class="cert-caption">Semester 1</div><p class="cert-brief">Marks memo — Semester 1</p></div>
 
-  for (let y = 0; y < H; y += gap) {
-    ctx.beginPath();
-    ctx.moveTo(0, y + (offset % gap));
-    ctx.lineTo(W, y + (offset % gap));
-    ctx.stroke();
-  }
+<div class="cert-item"><img src="assets/sem2_mm.jpg" onclick="openCert(this)"><div class="cert-caption">Semester 2</div><p class="cert-brief">Marks memo — Semester 2</p></div>
 
-  requestAnimationFrame(drawGrid);
-}
+<div class="cert-item"><img src="assets/sem3_mm.jpg" onclick="openCert(this)"><div class="cert-caption">Semester 3</div><p class="cert-brief">Marks memo — Semester 3</p></div>
 
-drawGrid();
+<div class="cert-item"><img src="assets/sem4_mm1.jpg" onclick="openCert(this)"><div class="cert-caption">Semester 4 (1)</div><p class="cert-brief">Marks memo — Semester 4 (part 1)</p></div>
 
-/* ===== Scroll-to-top button ===== */
-const topBtn = document.getElementById('scrollToTop');
-window.addEventListener('scroll', ()=>{ 
-  topBtn.style.display = window.scrollY > 320 ? 'block' : 'none'; 
-});
-topBtn.onclick = ()=> window.scrollTo({top:0, behavior:'smooth'});
+<div class="cert-item"><img src="assets/sem4_mm2.jpg" onclick="openCert(this)"><div class="cert-caption">Semester 4 (2)</div><p class="cert-brief">Marks memo — Semester 4 (part 2)</p></div>
 
-/* ===== Modal logic ===== */
-function openCert(el){
-  const imgSrc = el.src;
-  const desc = el.dataset.desc || '';
-  const modal = document.getElementById('certModal');
-  document.getElementById('modalImg').src = imgSrc;
-  document.getElementById('modalDesc').textContent = desc;
-  modal.style.display = 'flex';
-  modal.setAttribute('aria-hidden','false');
-  document.body.style.overflow = 'hidden';
-}
+<div class="cert-item"><img src="assets/sem5_mm.jpg" onclick="openCert(this)"><div class="cert-caption">Semester 5</div><p class="cert-brief">Marks memo — Semester 5</p></div>
 
-document.getElementById('closeModal').onclick = ()=> closeModal();
+<div class="cert-item"><img src="assets/sem6_mm.jpg" onclick="openCert(this)"><div class="cert-caption">Semester 6</div><p class="cert-brief">Marks memo — Semester 6</p></div>
 
-function closeModal(){
-  const modal = document.getElementById('certModal');
-  modal.style.display = 'none';
-  modal.setAttribute('aria-hidden','true');
-  document.body.style.overflow = '';
-}
+<div class="cert-item">
+<a href="assets/transcripts.pdf" target="_blank">
+<img src="assets/pdf_thumb.jpg">
+</a>
+<div class="cert-caption">Full Transcript (PDF)</div>
+<p class="cert-brief">7-page official transcript — opens as PDF</p>
+</div>
 
-document.addEventListener('keydown', (e)=>{ 
-  if(e.key === 'Escape') closeModal(); 
-});
+</div>
+</section>
 
-document.getElementById('certModal').addEventListener('click', (ev)=>{
-  if(ev.target.id === 'certModal') closeModal();
-});
+<!-- Course -->
+<section id="course-certs">
+<h2>Course Certificates</h2>
+<div class="cert-grid">
 
-/* accessibility */
-document.querySelectorAll('.cert-item img').forEach(img=>{
-  img.tabIndex = 0;
-  img.addEventListener('keydown', e=>{
-    if(e.key === 'Enter' || e.key === ' ') openCert(img);
-  });
-});
-</script>
+<div class="cert-item">
+<img src="assets/cert_wadhwani.jpg" onclick="openCert(this)">
+<div class="cert-caption">Wadhwani Employability Skills</div>
+<p class="cert-brief">Trained in customer communication and problem-solving.</p>
+</div>
+
+<div class="cert-item">
+<img src="assets/cert_java.jpg" onclick="openCert(this)">
+<div class="cert-caption">Java & Python Basics</div>
+<p class="cert-brief">Fundamentals & OOP basics.</p>
+</div>
+
+</div>
+</section>
+
+<!-- Activities -->
+<section id="extra-curricular">
+<h2>Extra-Curricular Activities</h2>
+<div class="cert-grid">
+
+<div class="cert-item"><img src="assets/cert_ieee.jpg" onclick="openCert(this)"><div class="cert-caption">IEEE UI/UX Hackathon</div><p class="cert-brief">Won best design</p></div>
+
+<div class="cert-item"><img src="assets/cert_english.jpg" onclick="openCert(this)"><div class="cert-caption">English Eclat</div><p class="cert-brief">Public speaking</p></div>
+
+<div class="cert-item"><img src="assets/cert_cs.jpg" onclick="openCert(this)"><div class="cert-caption">Blockchain Poster</div><p class="cert-brief">Presented to peers</p></div>
+
+</div>
+</section>
+
+<!-- Goals -->
+<section id="goals">
+<h2>Goals</h2>
+<ul class="goals">
+<li>⭐ Build strong career</li>
+<li>📞 Master communication</li>
+<li>💼 Grow senior</li>
+<li>🧠 Improve skills</li>
+<li>🌐 Work global</li>
+</ul>
+</section>
+
+<footer>©️ 2026 Komal Sriram</footer>
+<button id="scrollToTop">↑</button>
+
+<div id="certModal">
+<span id="closeModal">×</span>
+<img id="modalImg">
+<p id="modalDesc"></p>
+</div>
+
+<!-- ✅ JS -->
+<script src="script.js"></script>
 
 </body>
 </html>
