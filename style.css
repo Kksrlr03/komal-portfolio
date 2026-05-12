@@ -853,3 +853,44 @@ footer{
   }
 
 }
+/* WORK EXPERIENCE */
+
+.experience-card{
+    display:flex;
+    align-items:center;
+    gap:30px;
+
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.08);
+
+    padding:30px;
+    border-radius:20px;
+
+    margin-top:30px;
+}
+
+.experience-logo{
+    width:120px;
+    height:auto;
+    object-fit:contain;
+
+    background:white;
+    padding:12px;
+    border-radius:18px;
+}
+
+.experience-info h3{
+    font-size:28px;
+    margin-bottom:8px;
+}
+
+.experience-role{
+    opacity:0.8;
+    margin-bottom:14px;
+    font-weight:600;
+}
+
+.experience-info p{
+    line-height:1.7;
+    opacity:0.92;
+}
