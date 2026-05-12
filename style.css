@@ -801,3 +801,55 @@ footer{
   transform:translateY(-3px);
   box-shadow:0 10px 25px rgba(37,211,102,0.5);
 }
+/* Work Experience */
+
+#work-experience{
+  padding:80px 10%;
+}
+
+.experience-card{
+  display:flex;
+  align-items:center;
+  gap:30px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:20px;
+  padding:30px;
+  backdrop-filter:blur(10px);
+}
+
+.experience-logo{
+  width:100px;
+  height:100px;
+  object-fit:contain;
+  border-radius:20px;
+  background:white;
+  padding:10px;
+}
+
+.experience-info h3{
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.experience-role{
+  color:#00ffd5;
+  font-weight:600;
+  margin-bottom:15px;
+}
+
+.experience-info p{
+  line-height:1.8;
+  opacity:0.9;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+  .experience-card{
+    flex-direction:column;
+    text-align:center;
+  }
+
+}
