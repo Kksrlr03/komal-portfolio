@@ -1324,3 +1324,47 @@ footer{
 
     margin:0 4px;
 }
+.vision-card{
+    max-width:1000px;
+    margin:40px auto;
+    padding:35px 45px;
+
+    background:rgba(255,255,255,0.04);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:22px;
+
+    backdrop-filter:blur(12px);
+
+    transition:all 0.4s ease;
+
+    box-shadow:
+        0 0 25px rgba(138,92,246,0.15),
+        0 0 60px rgba(138,92,246,0.08);
+}
+
+.vision-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:rgba(138,92,246,0.5);
+
+    box-shadow:
+        0 0 40px rgba(138,92,246,0.35),
+        0 0 80px rgba(138,92,246,0.20),
+        0 0 120px rgba(138,92,246,0.10);
+}
+
+.vision-card h2{
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.vision-card p{
+    line-height:2;
+    color:#d8d8d8;
+    text-align:center;
+    max-width:850px;
+    margin:auto;
+}
