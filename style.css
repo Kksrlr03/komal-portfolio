@@ -1,7 +1,15 @@
 /* ==========================================
    RESET
 ========================================== */
+:root{
+  --primary:#d4af37;
+  --secondary:#f6d365;
+  --accent:#ffb347;
 
+  --glass:rgba(255,255,255,0.06);
+
+  --gold-glow:rgba(212,175,55,0.45);
+}
 *{
     margin:0;
     padding:0;
@@ -174,19 +182,11 @@ p{
 }
 
 .btn{
-
-    background:
-    linear-gradient(
-        90deg,
-        #7b5cff,
-        #a18cff
-    );
-
-    padding:8px 16px;
-
-    border-radius:100px;
-
-    color:white !important;
+  background:linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary)
+  );
 }
 
 /* ==========================================
