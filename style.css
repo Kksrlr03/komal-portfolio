@@ -1356,6 +1356,19 @@ footer{
     border-color:rgba(138,92,246,0.6);
 
     box-shadow:
+
+      
+.goal-flag{
+    width:22px;
+    height:22px;
+    object-fit:cover;
+    border-radius:50%;
+    margin-right:8px;
+    vertical-align:middle;
+
+    box-shadow:
+    0 0 10px rgba(255,255,255,0.4);
+}      
         0 0 45px rgba(138,92,246,0.35),
         0 0 100px rgba(138,92,246,0.18);
 }
