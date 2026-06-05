@@ -1276,15 +1276,16 @@ body{
 #intro-overlay{
     position:fixed;
     inset:0;
-    z-index:999999;
 
     display:flex;
     justify-content:center;
     align-items:center;
 
-    background:rgba(0,0,0,0.92);
+    z-index:9999;
 
-    transition:opacity 1s ease;
+    background:transparent;
+
+    transition:1s ease;
 }
 
 .intro-content{
@@ -1292,8 +1293,15 @@ body{
 }
 
 #intro-text{
-    color:#f6d365;
+    color:#d4af37;
+
     font-size:3rem;
+
     font-weight:700;
-    text-shadow:0 0 25px rgba(212,175,55,.5);
+
+    text-align:center;
+
+    text-shadow:
+        0 0 10px rgba(212,175,55,.4),
+        0 0 25px rgba(212,175,55,.3);
 }
