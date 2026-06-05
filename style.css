@@ -1368,3 +1368,6 @@ footer{
     max-width:850px;
     margin:auto;
 }
+.vision-card{
+    background:red !important;
+}
