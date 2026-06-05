@@ -20,19 +20,6 @@
 </head>
 
 <body>
-<body>
-
-<div id="intro-overlay">
-
-    <div class="intro-content">
-
-        <h1 id="intro-text">
-            Welcome, Traveller.
-        </h1>
-
-    </div>
-
-</div>
 
 <!-- Background -->
 
@@ -498,6 +485,20 @@ in professional environments.
 
 <!-- ✅ JS -->
 <script src="script.js"></script>
+<script>
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        const intro = document.getElementById("intro-overlay");
 
+        if(intro){
+            intro.style.opacity = "0";
+
+            setTimeout(() => {
+                intro.style.display = "none";
+            },1000);
+        }
+    },3000);
+});
+</script>
 </body>
 </html>
