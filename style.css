@@ -47,30 +47,58 @@ body{
     height:100%;
     z-index:-10;
 
-    filter:blur(60px);
+    filter:blur(25px);
 }
 
 .bg-overlay{
+    position:fixed;
+    inset:0;
+    z-index:-5;
+
     background:
+
     radial-gradient(
-        circle at top left,
-        rgba(212,175,55,.18),
+        circle at 20% 20%,
+        rgba(212,175,55,.35),
+        transparent 35%
+    ),
+
+    radial-gradient(
+        circle at 80% 30%,
+        rgba(0,180,216,.20),
         transparent 40%
     ),
 
     radial-gradient(
-        circle at bottom right,
-        rgba(255,179,71,.15),
+        circle at 50% 80%,
+        rgba(255,183,77,.25),
         transparent 40%
     ),
 
-    radial-gradient(
-        circle at center,
-        rgba(246,211,101,.08),
-        transparent 60%
+    linear-gradient(
+        180deg,
+        #08111f,
+        #10243d,
+        #0b1220
     );
-}
 
+    animation:luxuryMove 18s ease-in-out infinite alternate;
+}
+@keyframes luxuryMove{
+
+    0%{
+        transform:translate(-30px,-20px);
+    }
+
+    50%{
+        transform:translate(20px,15px);
+    }
+
+    100%{
+        transform:translate(40px,30px);
+    }
+
+}
 /* ==========================================
    GLOBAL
 ========================================== */
@@ -148,12 +176,15 @@ p{
 
     z-index:100;
 
-    background:rgba(10,10,25,.65);
+     background:rgba(8,17,31,.90);
 
     backdrop-filter:blur(18px);
 
     border-bottom:
-    1px solid rgba(255,255,255,.05);
+    1px solid rgba(212,175,55,.15);
+   
+     box-shadow:
+    0 4px 20px rgba(212,175,55,.08);
 }
 
 .logo{
@@ -183,11 +214,23 @@ p{
 }
 
 .btn{
-  background:linear-gradient(
-    90deg,
-    var(--primary),
-    var(--secondary)
-  );
+    background:
+    linear-gradient(
+        135deg,
+        #d4af37,
+        #f6d365
+    );
+
+    color:#111;
+
+    font-weight:700;
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    box-shadow:
+        0 0 18px rgba(212,175,55,.35);
 }
 
 /* ==========================================
