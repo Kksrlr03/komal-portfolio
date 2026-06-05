@@ -1114,3 +1114,191 @@ footer{
     color:#d0d0d0;
     margin:0;
 }
+/* ===== IRELAND JOURNEY TRACKER ===== */
+
+#journey-tracker{
+    margin:80px auto;
+    text-align:center;
+    max-width:1200px;
+}
+
+#journey-tracker h2{
+    font-size:2rem;
+    margin-bottom:10px;
+}
+
+.journey-subtitle{
+    color:#b8b8b8;
+    margin-bottom:40px;
+}
+
+.progress-container{
+    position:relative;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin:50px auto;
+    max-width:1000px;
+
+    padding:0 20px;
+}
+
+.progress-container::before{
+    content:'';
+    position:absolute;
+
+    left:0;
+    right:0;
+    top:50%;
+
+    height:6px;
+
+    background:rgba(255,255,255,0.12);
+
+    transform:translateY(-50%);
+
+    border-radius:100px;
+}
+
+.progress-fill{
+    position:absolute;
+
+    left:0;
+    top:50%;
+
+    height:6px;
+    width:38%;
+
+    transform:translateY(-50%);
+
+    border-radius:100px;
+
+    background:linear-gradient(
+        90deg,
+        #8b5cf6,
+        #6366f1,
+        #3b82f6
+    );
+
+    box-shadow:
+        0 0 20px #8b5cf6,
+        0 0 40px #6366f1;
+
+    animation:pulseGlow 3s infinite;
+}
+
+.journey-step{
+    position:relative;
+
+    width:22px;
+    height:22px;
+
+    border-radius:50%;
+
+    z-index:5;
+
+    cursor:pointer;
+
+    transition:all .3s ease;
+}
+
+.journey-step.completed{
+    background:#22c55e;
+
+    box-shadow:
+        0 0 15px #22c55e,
+        0 0 30px #22c55e;
+}
+
+.journey-step.current{
+    background:#8b5cf6;
+
+    box-shadow:
+        0 0 20px #8b5cf6,
+        0 0 40px #8b5cf6;
+}
+
+.journey-step.upcoming{
+    background:#555;
+}
+
+.journey-step:hover{
+    transform:scale(1.35);
+}
+
+.journey-step:hover::after{
+    content:attr(data-info);
+
+    position:absolute;
+
+    bottom:40px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    white-space:nowrap;
+
+    background:#111827;
+
+    color:white;
+
+    padding:10px 15px;
+
+    border-radius:12px;
+
+    font-size:.85rem;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+}
+
+.journey-labels{
+    display:flex;
+    justify-content:space-between;
+
+    max-width:1000px;
+    margin:20px auto 0;
+
+    color:#d0d0d0;
+
+    font-size:.85rem;
+}
+
+@keyframes pulseGlow{
+
+    0%{
+        box-shadow:
+        0 0 15px #8b5cf6,
+        0 0 25px #6366f1;
+    }
+
+    50%{
+        box-shadow:
+        0 0 30px #8b5cf6,
+        0 0 50px #6366f1;
+    }
+
+    100%{
+        box-shadow:
+        0 0 15px #8b5cf6,
+        0 0 25px #6366f1;
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .journey-labels{
+        font-size:.6rem;
+    }
+
+    .progress-container{
+        padding:0 10px;
+    }
+
+    .journey-step{
+        width:16px;
+        height:16px;
+    }
+}
