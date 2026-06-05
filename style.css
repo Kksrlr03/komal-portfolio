@@ -182,8 +182,10 @@ p{
 }
 
 .logo{
-    font-family:'Pacifico',cursive;
-    font-size:1.9rem;
+  font-family:'Pacifico',cursive;
+  font-size:2.3rem;
+  color:#f5e6c8;
+  text-shadow:0 0 20px rgba(212,175,55,.35);
 }
 
 .nav{
@@ -193,23 +195,19 @@ p{
 }
 
 .nav a{
-
     text-decoration:none;
-
-    color:#d0d0d0;
-
+    color:#f5e6c8;
     font-weight:600;
-
-    transition:.25s;
+    font-size:1rem;
+    transition:.3s;
 }
 
 .nav a:hover{
-    color:#ffffff;
+    color:#d4af37;
 }
 
 .btn{
-    background:
-    linear-gradient(
+    background:linear-gradient(
         135deg,
         #d4af37,
         #f6d365
@@ -219,12 +217,21 @@ p{
 
     font-weight:700;
 
-    padding:10px 18px;
+    padding:10px 20px;
 
-    border-radius:999px;
+    border-radius:30px;
 
     box-shadow:
-        0 0 18px rgba(212,175,55,.35);
+        0 0 20px rgba(212,175,55,.35);
+
+    transition:.3s ease;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 0 35px rgba(212,175,55,.6);
 }
 
 /* ==========================================
@@ -254,12 +261,12 @@ p{
 }
 
 .hero h1{
+    font-size:3rem;
+    font-weight:800;
+    color:#fff;
 
-    margin-top:18px;
-
-    font-size:2rem;
-
-    color:white;
+    text-shadow:
+        0 0 20px rgba(212,175,55,.25);
 }
 
 .tagline{
@@ -270,11 +277,8 @@ p{
 }
 
 .hero-role{
-
     color:#f6d365;
-
-    margin-top:12px;
-
+    font-size:1.1rem;
     font-weight:600;
 }
 
@@ -300,6 +304,19 @@ p{
     padding:40px;
 
     text-align:left;
+   border:1px solid rgba(212,175,55,.18);
+
+   box-shadow:
+   0 0 40px rgba(212,175,55,.08),
+   0 20px 60px rgba(0,0,0,.35);
+}
+
+.bio-card:hover{
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 0 60px rgba(212,175,55,.20),
+    0 30px 80px rgba(0,0,0,.45);
 }
 
 .bio-title{
@@ -315,14 +332,13 @@ p{
 
 .hero-desc{
     max-width:900px;
-    margin:0 auto;
+    margin:auto;
 
-    text-align:left;
+    text-align:justify;
 
     line-height:2;
-    font-size:1.05rem;
 
-    color:#e2e2e2;
+    color:#e6e6e6;
 }
 
 /* ==========================================
@@ -1210,6 +1226,7 @@ footer{
 
     .bio-card{
         padding:28px;
+        
     }
 
     .project-card.split{
