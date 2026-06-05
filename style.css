@@ -276,14 +276,15 @@ p{
 }
 
 .hero-desc{
-
     max-width:900px;
+    margin:0 auto;
 
-    margin:auto;
+    text-align:left;
 
-    line-height:1.95;
+    line-height:2;
+    font-size:1.05rem;
 
-    color:#d0d0d0;
+    color:#e2e2e2;
 }
 
 /* ==========================================
