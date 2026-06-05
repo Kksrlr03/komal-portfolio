@@ -51,22 +51,23 @@ body{
 }
 
 .bg-overlay{
-    position:fixed;
-    inset:0;
-
-    z-index:-5;
-
     background:
     radial-gradient(
-        circle at top,
-        rgba(139,92,246,.12),
-        transparent 45%
+        circle at top left,
+        rgba(212,175,55,.18),
+        transparent 40%
     ),
 
     radial-gradient(
-        circle at bottom,
-        rgba(59,130,246,.08),
+        circle at bottom right,
+        rgba(255,179,71,.15),
         transparent 40%
+    ),
+
+    radial-gradient(
+        circle at center,
+        rgba(246,211,101,.08),
+        transparent 60%
     );
 }
 
@@ -87,8 +88,8 @@ h2{
 
     color:#ffffff;
 
-    text-shadow:
-    0 0 10px rgba(139,92,246,.35);
+   text-shadow:
+0 0 12px rgba(212,175,55,.35);
 }
 
 p{
@@ -112,7 +113,7 @@ p{
 
     box-shadow:
     0 10px 30px rgba(0,0,0,.35),
-    0 0 25px rgba(139,92,246,.10);
+    0 0 25px rgba(212,175,55,.12);
 
     transition:all .35s ease;
 }
@@ -121,11 +122,11 @@ p{
 
     transform:translateY(-6px);
 
-    border-color:rgba(139,92,246,.50);
+    border-color:rgba(212,175,55,.50);
 
     box-shadow:
-    0 15px 45px rgba(139,92,246,.25),
-    0 0 80px rgba(139,92,246,.18);
+    0 15px 45px rgba(212,175,55,.25),
+0 0 80px rgba(212,175,55,.15);
 }
 
 /* ==========================================
@@ -208,11 +209,11 @@ p{
     border-radius:50%;
 
     border:
-    3px solid rgba(139,92,246,.5);
-
+    3px solid rgba(212,175,55,.5);
+   
     box-shadow:
-    0 0 30px rgba(139,92,246,.35),
-    0 0 70px rgba(139,92,246,.18);
+    0 0 30px rgba(212,175,55,.35),
+    0 0 70px rgba(212,175,55,.18);
 }
 
 .hero h1{
@@ -233,7 +234,7 @@ p{
 
 .hero-role{
 
-    color:#cdbdff;
+    color:#f6d365;
 
     margin-top:12px;
 
@@ -389,15 +390,15 @@ p{
 
     background:
     linear-gradient(
-        90deg,
-        #8b5cf6,
-        #6366f1,
-        #3b82f6
+    90deg,
+    #d4af37,
+    #f6d365,
+    #ffb347
     );
 
     box-shadow:
-    0 0 20px #8b5cf6,
-    0 0 45px #6366f1;
+    0 0 20px #d4af37,
+    0 0 45px #f6d365;
 }
 
 .journey-step{
@@ -424,10 +425,10 @@ p{
 
 .journey-step.current{
 
-    background:#8b5cf6;
-
+    background:#d4af37;
+   
     box-shadow:
-    0 0 25px #8b5cf6;
+    0 0 25px #d4af37;
 }
 
 .journey-step.upcoming{
@@ -667,8 +668,8 @@ p{
     transform:translateY(-6px);
 
     box-shadow:
-    0 15px 45px rgba(139,92,246,.20),
-    0 0 80px rgba(139,92,246,.12);
+    0 15px 45px rgba(212,175,55,.20),
+    0 0 80px rgba(212,175,55,.12);
 }
 
 /* ==========================================
@@ -756,7 +757,7 @@ p{
     transform:translateY(-4px);
 
     box-shadow:
-    0 0 20px rgba(139,92,246,.35);
+    0 0 20px rgba(212,175,55,.35);
 }
 /* ==========================================
    CERTIFICATE GRIDS
@@ -795,11 +796,11 @@ p{
 
     transform:translateY(-6px);
 
-    border-color:rgba(139,92,246,.45);
+    border-color:rgba(212,175,55,.50);
 
     box-shadow:
-    0 15px 45px rgba(139,92,246,.20),
-    0 0 60px rgba(139,92,246,.12);
+    0 15px 45px rgba(212,175,55,.20),
+    0 0 60px rgba(212,175,55,.12);
 }
 
 .cert-item img{
@@ -913,10 +914,10 @@ p{
 
     transform:translateY(-5px);
 
-    border-color:rgba(139,92,246,.45);
+    border-color:rgba(212,175,55,.50);
 
     box-shadow:
-    0 0 30px rgba(139,92,246,.25);
+    0 0 30px rgba(212,175,55,.25);
 }
 
 .label{
@@ -934,7 +935,7 @@ p{
 
     font-weight:700;
 
-    color:#bca8ff;
+    color:#f6d365;
 }
 
 /* ==========================================
@@ -981,10 +982,10 @@ p{
     translateY(-5px)
     scale(1.03);
 
-    border-color:rgba(139,92,246,.45);
+    border-color:rgba(212,175,55,.50);
 
     box-shadow:
-    0 0 30px rgba(139,92,246,.25);
+    0 0 30px rgba(212,175,55,.25);
 }
 
 /* ==========================================
@@ -1128,8 +1129,8 @@ footer{
     background:
     linear-gradient(
     90deg,
-    #7b5cff,
-    #a18cff
+    #d4af37,
+    #f6d365
     );
 
     color:white;
