@@ -102,3 +102,22 @@ document.addEventListener('keydown', (e)=>{
     document.getElementById('certModal').style.display = 'none';
   }
 });
+window.addEventListener("load", () => {
+
+    const intro = document.getElementById("intro-overlay");
+
+    if (!intro) return;
+
+    setTimeout(() => {
+
+        intro.style.opacity = "0";
+
+        setTimeout(() => {
+
+            intro.style.display = "none";
+
+        }, 1000);
+
+    }, 3000);
+
+});
