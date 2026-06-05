@@ -1,4 +1,5 @@
-/* Script content injected in real-time *//* ===== GRID BACKGROUND ===== */
+/* ===== LUXURY FLOATING LIGHTS ===== */
+
 const canvas = document.getElementById('bgCanvas');
 const ctx = canvas.getContext('2d');
 
@@ -6,39 +7,69 @@ let W = canvas.width = window.innerWidth;
 let H = canvas.height = window.innerHeight;
 
 window.addEventListener('resize', () => {
-  W = canvas.width = window.innerWidth;
-  H = canvas.height = window.innerHeight;
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
 });
 
-let offset = 0;
+const blobs = [];
 
-function drawGrid() {
-  ctx.clearRect(0, 0, W, H);
+for(let i=0;i<8;i++){
 
-  ctx.strokeStyle = "rgba(180,140,255,0.15)";
-  ctx.lineWidth = 1;
+    blobs.push({
+        x:Math.random()*W,
+        y:Math.random()*H,
 
-  const gap = 40;
-  offset += 0.3;
+        r:150 + Math.random()*250,
 
-  for (let x = 0; x < W; x += gap) {
-    ctx.beginPath();
-    ctx.moveTo(x + (offset % gap), 0);
-    ctx.lineTo(x + (offset % gap), H);
-    ctx.stroke();
-  }
+        dx:(Math.random()-0.5)*0.3,
+        dy:(Math.random()-0.5)*0.3,
 
-  for (let y = 0; y < H; y += gap) {
-    ctx.beginPath();
-    ctx.moveTo(0, y + (offset % gap));
-    ctx.lineTo(W, y + (offset % gap));
-    ctx.stroke();
-  }
-
-  requestAnimationFrame(drawGrid);
+        color:[
+            'rgba(212,175,55,0.12)',
+            'rgba(246,211,101,0.10)',
+            'rgba(255,179,71,0.10)'
+        ][Math.floor(Math.random()*3)]
+    });
 }
 
-drawGrid();
+function animateBackground(){
+
+    ctx.clearRect(0,0,W,H);
+
+    blobs.forEach(blob=>{
+
+        blob.x += blob.dx;
+        blob.y += blob.dy;
+
+        if(blob.x < -blob.r) blob.x = W + blob.r;
+        if(blob.x > W + blob.r) blob.x = -blob.r;
+
+        if(blob.y < -blob.r) blob.y = H + blob.r;
+        if(blob.y > H + blob.r) blob.y = -blob.r;
+
+        const gradient = ctx.createRadialGradient(
+            blob.x,
+            blob.y,
+            0,
+            blob.x,
+            blob.y,
+            blob.r
+        );
+
+        gradient.addColorStop(0,blob.color);
+        gradient.addColorStop(1,'transparent');
+
+        ctx.fillStyle = gradient;
+
+        ctx.beginPath();
+        ctx.arc(blob.x,blob.y,blob.r,0,Math.PI*2);
+        ctx.fill();
+    });
+
+    requestAnimationFrame(animateBackground);
+}
+
+animateBackground();
 
 /* ===== SCROLL BUTTON ===== */
 const topBtn = document.getElementById('scrollToTop');
