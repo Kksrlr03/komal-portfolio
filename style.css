@@ -1302,3 +1302,25 @@ footer{
         height:16px;
     }
 }
+/* ===== Flags stuff ===== */
+.country-flag{
+    width:32px;
+    height:22px;
+    object-fit:cover;
+    border-radius:4px;
+    vertical-align:middle;
+    margin-right:10px;
+
+    box-shadow:0 0 12px rgba(255,255,255,0.25);
+}
+
+.country-flag-small{
+    width:18px;
+    height:12px;
+    object-fit:cover;
+    border-radius:3px;
+
+    vertical-align:middle;
+
+    margin:0 4px;
+}
