@@ -24,9 +24,6 @@
 <!-- Background -->
 
 <video id="bgVideo" autoplay muted loop playsinline>
-<!-- Background -->
-
-<video id="bgVideo" autoplay muted loop playsinline>
     <source src="assets/ireland-bg.mp4" type="video/mp4">
 </video>
 
@@ -485,20 +482,6 @@ in professional environments.
 
 <!-- ✅ JS -->
 <script src="script.js"></script>
-<script>
-window.addEventListener("load", () => {
-    setTimeout(() => {
-        const intro = document.getElementById("intro-overlay");
 
-        if(intro){
-            intro.style.opacity = "0";
-
-            setTimeout(() => {
-                intro.style.display = "none";
-            },1000);
-        }
-    },3000);
-});
-</script>
 </body>
 </html>
