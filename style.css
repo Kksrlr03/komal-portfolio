@@ -29,7 +29,7 @@ body{
 body{
     font-family:'Segoe UI',sans-serif;
 
-    background:#0b1220;
+    background:#111111;
 
     color:#edf2ff;
 
@@ -207,7 +207,8 @@ p{
 
     font-weight:700;
 
-    padding:12px 24px;
+    padding:14px 28px;
+    font-size:1rem:
 
     border-radius:999px;
 
@@ -1253,8 +1254,8 @@ footer{
 }
 body{
   background:
-    radial-gradient(circle at 20% 20%, rgba(212,175,55,0.12), transparent 35%),
-    radial-gradient(circle at 80% 30%, rgba(255,183,77,0.08), transparent 35%),
-    radial-gradient(circle at 50% 80%, rgba(255,215,120,0.08), transparent 40%),
-    #0b1220;
+    radial-gradient(circle at 20% 20%, rgba(212,175,55,0.18), transparent 35%),
+    radial-gradient(circle at 80% 30%, rgba(255,183,77,0.15), transparent 35%),
+    radial-gradient(circle at 50% 80%, rgba(255,215,120,0.15), transparent 40%),
+    #111111;
 }
