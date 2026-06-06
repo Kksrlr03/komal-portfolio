@@ -493,46 +493,24 @@ in professional environments.
 <!-- ✅ JS -->
 <script src="script.js"></script>
 <script>
+window.addEventListener("load", () => {
 
-const introTexts = [
-    "Welcome, Traveller.",
-    "Every destination has a story.",
-    "Every journey begins somewhere.",
-    "This is mine."
-];
+    const overlay = document.getElementById("intro-overlay");
 
-let current = 0;
+    if(!overlay) return;
 
-const introText = document.getElementById("intro-text");
-
-const interval = setInterval(() => {
-
-    current++;
-
-    if(current < introTexts.length){
-
-        introText.style.opacity = "0";
-
-        setTimeout(() => {
-            introText.innerText = introTexts[current];
-            introText.style.opacity = "1";
-        },400);
-
-    }else{
-
-        clearInterval(interval);
-
-        const overlay = document.getElementById("intro-overlay");
+    setTimeout(() => {
 
         overlay.style.opacity = "0";
 
         setTimeout(() => {
             overlay.remove();
-        },1000);
-    }
+        }, 1000);
 
-},1500);
+    }, 3000);
 
+});
 </script>
+
 </body>
 </html>
