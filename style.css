@@ -1321,3 +1321,58 @@ body{
         opacity:1;
     }
 }
+/* Impact Section */
+
+.impact-container{
+
+    position:relative;
+
+    margin-top:120px;
+
+    text-align:center;
+
+}
+
+.impact-arrow{
+
+    width:4px;
+
+    height:90px;
+
+    background:#8ddcff;
+
+    margin:auto;
+
+    position:relative;
+
+}
+
+.impact-arrow::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-16px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    border-left:10px solid transparent;
+
+    border-right:10px solid transparent;
+
+    border-top:18px solid #8ddcff;
+
+}
+
+.impact-card{
+
+    margin:40px auto;
+
+    max-width:700px;
+
+    padding:35px;
+
+}
