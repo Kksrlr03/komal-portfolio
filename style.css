@@ -3213,7 +3213,7 @@ justify-content:flex-start;
 
 border:1px solid rgba(255,255,255,.08);
 
-border-radius:22px;
+border-radius:28px;
 
 background:rgba(255,255,255,.03);
 
@@ -3237,7 +3237,7 @@ width:220px;
 
 height:220px;
 
-border-radius:50%;
+border-radius:28px;
 
 background:rgba(0,212,255,.08);
 
@@ -3275,7 +3275,7 @@ aspect-ratio:4/3;
 
 object-fit:cover;
 
-border-radius:16px;
+border-radius:28px;
 
 transition:.35s;
 
