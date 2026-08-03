@@ -47,6 +47,8 @@ font-family:"Segoe UI",system-ui,-apple-system,sans-serif;
 
 line-height:1.75;
 
+ min-height:100vh;  
+
 color:#f8fafc;
 
 overflow-x:hidden;
