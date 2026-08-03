@@ -271,6 +271,25 @@ pointer-events:none;
 
 }
 
+body::after{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background:
+
+radial-gradient(circle at top, rgba(0,212,255,.08), transparent 60%),
+
+linear-gradient(rgba(4,8,18,.55),rgba(4,8,18,.78));
+
+pointer-events:none;
+
+z-index:-1;
+
+}
 
 /* ---------- Buttons ---------- */
 
