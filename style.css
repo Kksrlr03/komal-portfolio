@@ -127,25 +127,136 @@ font-size:32px;
 .header{
 
 position:fixed;
-   
-display:flex;
-   
-align-items:center;
-   
-justify-content:space-between;
-   
-padding:18px 8%;
-   
-top:0;
 
+top:0;
 left:0;
 
 width:100%;
 
-z-index:999;
+height:82px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:0 70px;
+
+background:rgba(7,12,24,.55);
+
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+box-shadow:
+0 10px 35px rgba(0,0,0,.15);
+
+z-index:9999;
+
+transition:
+background .35s ease,
+padding .35s ease,
+box-shadow .35s ease;
 
 }
 
+
+.logo{
+
+font-size:24px;
+
+font-weight:700;
+
+letter-spacing:.3px;
+
+color:#ffffff;
+
+white-space:nowrap;
+
+}
+
+.nav{
+
+display:flex;
+
+align-items:center;
+
+gap:34px;
+
+}
+
+.nav a{
+
+position:relative;
+
+font-size:17px;
+
+font-weight:600;
+
+color:#dbeafe;
+
+padding:8px 0;
+
+transition:.3s ease;
+
+}
+
+.nav a:hover{
+
+color:#00d4ff;
+
+}
+.nav a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:-6px;
+
+width:0;
+
+height:2px;
+
+background:#00d4ff;
+
+transition:.35s ease;
+
+border-radius:50px;
+
+}
+.nav a:hover::after{
+
+width:100%;
+
+}
+.nav a.active{
+
+color:#00d4ff;
+
+}
+
+.nav a.active::after{
+
+width:100%;
+
+}
+.header-scrolled{
+
+background:rgba(5,8,20,.82);
+
+backdrop-filter:blur(22px);
+
+-webkit-backdrop-filter:blur(22px);
+
+box-shadow:
+0 15px 45px rgba(0,0,0,.28);
+
+}
 
 /* ---------- Universal Subtitle ---------- */
 
