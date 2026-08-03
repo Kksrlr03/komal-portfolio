@@ -4663,7 +4663,11 @@ transform:scale(.95);
 
 #certModal{
 
-display:none;
+display:flex;
+   
+opacity:0;
+   
+visibility:hidden;
 
 position:fixed;
 
