@@ -36,7 +36,21 @@ overflow-x:hidden;
 background:#050816;
 
 }
+body::before{
 
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background:rgba(5,8,22,.62);
+
+pointer-events:none;
+
+z-index:-2;
+
+}
 /* ---------- Section Layout ---------- */
 
 section{
@@ -443,6 +457,8 @@ text-align:center;
 position:relative;
 
 padding:140px 8% 100px;
+
+z-index:2;
 
 }
 
