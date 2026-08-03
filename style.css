@@ -4810,3 +4810,385 @@ right:20px;
 }
 
 }
+/* Active Navbar */
+
+.nav a.active{
+
+color:#00d4ff;
+
+}
+
+.nav a.active::after{
+
+width:100%;
+
+}
+
+/* Sticky Header */
+
+.header-scrolled{
+
+background:rgba(8,15,35,.82);
+
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+box-shadow:0 15px 35px rgba(0,0,0,.18);
+
+}
+/* Scroll Button Animation */
+
+#scrollToTop{
+
+transition:
+
+opacity .35s ease,
+
+transform .35s ease,
+
+visibility .35s ease,
+
+box-shadow .35s ease;
+
+}
+/* ==========================================
+   Modal Animation Upgrade
+========================================== */
+
+#certModal{
+
+opacity:0;
+
+visibility:hidden;
+
+transition:
+
+opacity .25s ease,
+
+visibility .25s ease;
+
+}
+
+#certModal.show{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+#modalImg{
+
+opacity:0;
+
+transform:scale(.92);
+
+transition:
+
+transform .35s ease,
+
+opacity .35s ease;
+
+}
+
+#certModal.show #modalImg{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+#modalDesc{
+
+opacity:0;
+
+transform:translateY(10px);
+
+transition:
+
+opacity .35s ease,
+
+transform .35s ease;
+
+}
+
+#certModal.show #modalDesc{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+/* ==========================================================
+   REVEAL ANIMATIONS
+========================================================== */
+
+.reveal{
+
+opacity:0;
+
+transform:translateY(45px);
+
+transition:
+
+opacity .8s ease,
+
+transform .8s ease;
+
+will-change:transform,opacity;
+
+}
+
+.revealed{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+/* Premium Cards */
+
+.premium-card.reveal{
+
+transform:
+
+translateY(50px)
+
+scale(.98);
+
+}
+
+.premium-card.revealed{
+
+transform:
+
+translateY(0)
+
+scale(1);
+
+}
+
+/* Project Cards */
+
+.project-card.reveal{
+
+transform:
+
+translateY(70px);
+
+}
+
+.project-card.revealed{
+
+transform:
+
+translateY(0);
+
+}
+
+/* Certificate Cards */
+
+.cert-item.reveal,
+
+.language-card.reveal,
+
+.tech-category.reveal,
+
+.why-card.reveal{
+
+transform:
+
+translateY(35px);
+
+}
+
+.cert-item.revealed,
+
+.language-card.revealed,
+
+.tech-category.revealed,
+
+.why-card.revealed{
+
+transform:
+
+translateY(0);
+
+}
+/* ==========================================================
+   JOURNEY TRACKER ENHANCEMENTS
+========================================================== */
+
+/* Progress */
+
+.progress-fill{
+
+width:0;
+
+transition:width 2s ease;
+
+}
+
+/* Hover */
+
+.journey-step{
+
+transition:
+
+transform .35s ease,
+
+box-shadow .35s ease;
+
+cursor:pointer;
+
+}
+
+.journey-step:hover{
+
+transform:translateY(-8px) scale(1.08);
+
+}
+
+.step-active{
+
+box-shadow:
+
+0 0 25px rgba(0,212,255,.55);
+
+}
+
+/* Tooltip */
+
+.journey-tooltip{
+
+position:absolute;
+
+padding:14px 18px;
+
+max-width:280px;
+
+background:rgba(15,23,42,.95);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:14px;
+
+color:#fff;
+
+font-size:14px;
+
+line-height:1.6;
+
+pointer-events:none;
+
+opacity:0;
+
+transform:translateY(10px);
+
+transition:.25s;
+
+z-index:99999;
+
+box-shadow:
+
+0 15px 40px rgba(0,0,0,.25);
+
+}
+
+.journey-tooltip strong{
+
+display:block;
+
+margin-bottom:6px;
+
+color:#00d4ff;
+
+font-size:15px;
+
+}
+
+.journey-tooltip.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+/* ==========================================================
+   PART 7 SUPPORT CSS
+========================================================== */
+
+/* Images */
+
+img{
+
+opacity:0;
+
+transition:
+
+opacity .5s ease,
+
+transform .35s ease;
+
+}
+
+img.loaded{
+
+opacity:1;
+
+}
+
+/* Page Ready */
+
+.page-loaded{
+
+animation:
+
+pageFade .7s ease;
+
+}
+
+@keyframes pageFade{
+
+from{
+
+opacity:.97;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+/* Intro */
+
+.fade-out{
+
+opacity:0 !important;
+
+pointer-events:none;
+
+transition:opacity .8s ease;
+
+}
+
+/* Accessibility */
+
+.reduced-motion *{
+
+animation:none !important;
+
+transition:none !important;
+
+scroll-behavior:auto !important;
+
+}
