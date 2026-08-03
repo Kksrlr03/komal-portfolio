@@ -105,7 +105,15 @@ font-size:32px;
 .header{
 
 position:fixed;
-
+   
+display:flex;
+   
+align-items:center;
+   
+justify-content:space-between;
+   
+padding:18px 8%;
+   
 top:0;
 
 left:0;
