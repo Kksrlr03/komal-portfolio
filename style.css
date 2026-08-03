@@ -1793,7 +1793,7 @@ margin-bottom:18px;
 
 max-width:760px;
 
-margin:0 auto 60px;
+margin:0 auto 80px;
 
 text-align:center;
 
@@ -1813,7 +1813,7 @@ display:grid;
 
 grid-template-columns:repeat(2,1fr);
 
-gap:35px;
+gap:42px;
 
 max-width:1200px;
 
@@ -1829,9 +1829,9 @@ position:relative;
 
 overflow:hidden;
 
-padding:38px;
+padding:44px;
 
-min-height:230px;
+min-height:260px;
 
 display:flex;
 
@@ -1937,7 +1937,7 @@ z-index:2;
 
 font-size:17px;
 
-line-height:1.9;
+line-height:2;
 
 color:#dbeafe;
 
@@ -1998,6 +1998,8 @@ padding:30px;
 #current-focus .why-card h3{
 
 font-size:22px;
+
+margin-bottom:26px;
 
 }
 
