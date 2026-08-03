@@ -6,7 +6,9 @@
 /* ---------- Smooth Scrolling ---------- */
 
 html{
-
+   
+overflow-x:hidden;
+   
 scroll-behavior:smooth;
 
 }
