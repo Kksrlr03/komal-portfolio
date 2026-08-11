@@ -2175,154 +2175,6 @@ margin-top:70px;
    7. LANGUAGES
 ========================================================== */
 
-#languages{
-
-padding:100px 8%;
-
-position:relative;
-
-overflow:hidden;
-
-}
-
-#languages h2{
-
-text-align:center;
-
-font-size:42px;
-
-margin-bottom:55px;
-
-}
-
-/* Grid */
-
-.language-grid{
-
-display:grid;
-
-grid-template-columns:repeat(4,1fr);
-
-gap:28px;
-
-max-width:1250px;
-
-margin:auto;
-
-}
-
-/* Cards */
-
-.language-card{
-
-position:relative;
-
-padding:35px 25px;
-
-text-align:center;
-
-overflow:hidden;
-
-transition:.4s ease;
-
-border:1px solid rgba(255,255,255,.08);
-
-min-height:180px;
-
-display:flex;
-
-flex-direction:column;
-
-justify-content:center;
-
-}
-
-/* Glow */
-
-.language-card::before{
-
-content:"";
-
-position:absolute;
-
-top:-70px;
-
-right:-70px;
-
-width:180px;
-
-height:180px;
-
-border-radius:50%;
-
-background:rgba(0,212,255,.08);
-
-filter:blur(55px);
-
-transition:.4s;
-
-}
-
-.language-card:hover::before{
-
-transform:scale(1.25);
-
-}
-
-/* Hover */
-
-.language-card:hover{
-
-transform:translateY(-8px);
-
-box-shadow:
-
-0 20px 40px rgba(0,212,255,.16);
-
-}
-
-/* Heading */
-
-.language-card h3{
-
-font-size:24px;
-
-margin-bottom:18px;
-
-position:relative;
-
-z-index:2;
-
-}
-
-/* Text */
-
-.language-card p{
-
-font-size:17px;
-
-color:#dbeafe;
-
-line-height:1.8;
-
-position:relative;
-
-z-index:2;
-
-}
-
-/* Mobile */
-
-@media(max-width:1100px){
-
-.language-grid{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-}
-
 @media(max-width:700px){
 
 #languages{
@@ -2367,7 +2219,9 @@ font-size:16px;
 
 }
 
-}
+} /* CLOSE LANGUAGES MOBILE MEDIA QUERY */
+
+
 /* ==========================================================
    8. WORK EXPERIENCE
 ========================================================== */
