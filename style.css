@@ -4840,7 +4840,256 @@ font-size:42px;
    18. FOOTER
 ========================================================== */
 
-****
+#footer{
+
+    width:100%;
+
+    padding:45px 8% 30px;
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    background:rgba(255,255,255,.025);
+
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+
+}
+
+/* Soft ambient glow */
+
+#footer::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-120px;
+    left:50%;
+
+    width:420px;
+    height:220px;
+
+    transform:translateX(-50%);
+
+    border-radius:50%;
+
+    background:rgba(0,212,255,.06);
+
+    filter:blur(80px);
+
+    pointer-events:none;
+
+}
+
+/* Footer Content */
+
+.footer-content{
+
+    max-width:900px;
+
+    margin:0 auto;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/* Name */
+
+.footer-content h3{
+
+    margin:0 0 6px;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+}
+
+/* Main status */
+
+.footer-content p{
+
+    margin:0;
+
+}
+
+/* Tagline */
+
+.footer-tagline{
+
+    font-size:16px;
+
+    font-weight:600;
+
+    color:#cbd5e1;
+
+    margin-bottom:14px !important;
+
+}
+
+/* Description */
+
+.footer-description{
+
+    max-width:650px;
+
+    margin:0 auto 22px !important;
+
+    font-size:14px;
+
+    line-height:1.7;
+
+    color:#94a3b8;
+
+}
+
+/* Divider */
+
+.footer-divider{
+
+    width:90px;
+
+    height:1px;
+
+    margin:20px auto;
+
+    background:linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(0,212,255,.45),
+
+        transparent
+
+    );
+
+}
+
+/* Footer links */
+
+.footer-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:22px;
+
+}
+
+.footer-links a{
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#94a3b8;
+
+    transition:.3s ease;
+
+}
+
+.footer-links a:hover{
+
+    color:#00d4ff;
+
+}
+
+/* Copyright */
+
+.footer-small{
+
+    font-size:13px !important;
+
+    color:#64748b !important;
+
+    margin:18px 0 8px !important;
+
+}
+
+/* Final motto */
+
+.footer-motto{
+
+    font-size:13px !important;
+
+    color:#94a3b8 !important;
+
+    margin:0 !important;
+
+}
+
+/* ==========================================================
+   FOOTER MOBILE
+========================================================== */
+
+@media(max-width:768px){
+
+    #footer{
+
+        padding:38px 6% 24px;
+
+    }
+
+    .footer-content h3{
+
+        font-size:20px;
+
+    }
+
+    .footer-tagline{
+
+        font-size:15px;
+
+    }
+
+    .footer-description{
+
+        font-size:13px;
+
+    }
+
+    .footer-links{
+
+        gap:14px 20px;
+
+    }
+
+    .footer-links a{
+
+        font-size:13px;
+
+    }
+
+    .footer-small{
+
+        font-size:12px !important;
+
+    }
+
+    .footer-motto{
+
+        font-size:12px !important;
+
+    }
+
+}
 /* ==========================================================
    SCROLL TO TOP
 ========================================================== */
