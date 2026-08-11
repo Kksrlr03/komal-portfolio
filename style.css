@@ -4518,6 +4518,51 @@ font-size:17px;
 
 }
 /* ==========================================================
+   RESUME BUTTON
+========================================================== */
+
+.secondary-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    padding:18px 10px;
+
+    color:#cbd5e1 !important;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    transition:.3s ease;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.secondary-btn:hover{
+
+    color:#00d4ff !important;
+
+    transform:translateY(-3px);
+
+}
+
+.secondary-btn:focus{
+
+    color:#00d4ff !important;
+
+}
+/* ==========================================================
    17. QUOTE SECTION
 ========================================================== */
 
