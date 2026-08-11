@@ -4516,7 +4516,24 @@ font-size:17px;
 
 }
 
+.contact-buttons{
+
+flex-direction:column;
+
+gap:10px;
+
 }
+
+.secondary-btn{
+
+padding:12px 16px;
+
+font-size:16px;
+
+}
+   
+}
+
 /* ==========================================================
    RESUME BUTTON
 ========================================================== */
