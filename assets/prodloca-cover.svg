@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <defs>
+    <radialGradient id="bg"><stop stop-color="#333336"/><stop offset="1" stop-color="#101012"/></radialGradient>
+    <linearGradient id="fade"><stop stop-color="#111113" stop-opacity="0"/><stop offset="1" stop-color="#111113"/></linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <g fill="none" stroke="#545456" stroke-width="2" opacity=".38">
+    <path d="M610 0 720 170 690 360 820 520 850 720M830 0 870 190 1000 270 975 450 1100 720M1050 0 1030 160 1130 340 1210 370 1280 530M490 90 1280 220M500 300 1280 460M550 580 1280 640"/>
+    <path d="M700 0 760 200 780 390 890 570M910 0 940 140 1090 270 1040 530 1150 680M600 120 1060 95M700 390 1260 350" stroke-width="1"/>
+  </g>
+  <g fill="#ededeb" stroke="#171719" stroke-width="8">
+    <circle cx="885" cy="215" r="14"/><circle cx="1050" cy="438" r="14"/><circle cx="744" cy="490" r="14"/>
+  </g>
+  <g fill="none" stroke="#ddd" opacity=".2"><circle cx="885" cy="215" r="35"/><circle cx="1050" cy="438" r="35"/><circle cx="744" cy="490" r="35"/></g>
+  <rect x="0" y="0" width="740" height="720" fill="#111113" opacity=".68"/>
+  <text x="76" y="94" fill="#b8b8ba" font-family="Arial,sans-serif" font-size="17" letter-spacing="4">PRODUCT WALKTHROUGH / 01</text>
+  <text x="70" y="300" fill="#f2f1ed" font-family="Arial,sans-serif" font-size="112" font-weight="600" letter-spacing="-7">ProdLoca.</text>
+  <text x="76" y="370" fill="#c2c2c4" font-family="Arial,sans-serif" font-size="31">Discover what’s nearby.</text>
+  <path d="M76 420H505" stroke="#666"/>
+  <text x="76" y="625" fill="#a0a0a4" font-family="Arial,sans-serif" font-size="15" letter-spacing="3">REACT / FIREBASE / MAPBOX GL</text>
+  <text x="1210" y="625" fill="#a0a0a4" text-anchor="end" font-family="Arial,sans-serif" font-size="15" letter-spacing="3">KOMAL SRIRAM</text>
+</svg>
